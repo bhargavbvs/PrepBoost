@@ -1,0 +1,2 @@
+# Edutech
+Edutech is designed for aspirants preparing for exams like conducted by the UPSC(Union Public Service Commission) of India. UPSC conducts various exams like CSE (Civil Services Examination), CDS (Combined Defense Services), CAPF (Central Armed Police Forces), NDA (National Defense Academy), and others. Our vision is to help students during their preparation with the power of technology to make their preparation easier, smarter &amp; enjoyable.
