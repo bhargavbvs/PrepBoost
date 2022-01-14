@@ -1,4 +1,4 @@
-# PrepBoost
+# PrepBoost 
 
 PrepBoost is designed for students preparing for exams conducted by UPSC (Union Public Service Commission) of India. UPSC conducts various exams every year like the CSE (Civil Services Examination), CDS (Combined Defense Services), CAPF (Central Armed Police Forces), NDA (National Defense Academy), and others. Our vision is to help students during their preparation with the power of technology to make their preparation easier, smarter &amp; enjoyable.
 
@@ -17,11 +17,11 @@ TechStack :
 
 React, GoLang, MySQL, Elasticsearch,  
 
-#Authors 
+#Authors
 
 | Name  | Github ID | Roll No |
 | ------------- | ------------- |
-| Chaitanya  |  |
-| Anudeep  |   |
-| Srisai  |   |
+| Chaitanya  |   |
+| Anudeep  |  |
+| Srisai  |  |
 | Bhargav  |   |
