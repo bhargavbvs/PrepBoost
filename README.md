@@ -9,9 +9,9 @@ Elaborating on the project :
 1. The focus is on providing a testing platform where students can practice previous years questions and get their standings (rank) among other students. 
 2. Students can attempt the questions of the past 25 years papers which will help them in their preparation.
 3. Using a specific keyword, students can search from thousands of questions to know about the specific questions or topic which was asked.
-4. The questions will be organized year wise and subject wise so that specific year question that can be found easily.
+4. The questions will be organized year wise and subject wise so that specific year question can be found easily.
 5. Further, the questions will be organized topic/subject wise so that students can focus on the topic/subjects which they want to improve upon.
-6. Daliy Leaderboard helps students to find their standings based on the no.of questions they solved daily which helps them to be competitive.
+6. Daily Leaderboard helps students to find their standings based on the no.of questions they solved daily which helps them to be competitive.
 7. Bookmarking option helps students to save the questions which they want to solve multiple times.
 8. Students can Report(!) a question if there is any error or if the answer is incorrect.
 
@@ -19,7 +19,7 @@ Elaborating on the project :
 
 React, Golang, MySQL, Elasticsearch
 
-# Authors
+# Team Members :
 
 | Name  | Github ID | 
 | ------------- | ------------- |
