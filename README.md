@@ -12,4 +12,10 @@ Elaborating on the project :
 6. Daliy Leaderboard helps students to find their standings based on the no.of questions they solved daily which helps them to be competitive.
 7. Bookmarking option helps students to save the questions which they want to solve multiple times.
 8. Students can Report(!) a question if there is any error or if the answer is incorrect.
-9. 
+
+#Authors 
+
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
