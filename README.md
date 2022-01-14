@@ -9,6 +9,6 @@ Elaborating on the project :
 3. Using a specific keyword, students can search from thousands of questions to know about the specific questions or topic which was asked.
 4. The questions will be organized year wise and subject wise so that specific year question that can be found easily.
 5. Further, the questions will be organized topic/subject wise so that students can focus on the topic/subjects which they want to improve upon.
-6. Bookmarking option helps students students to save the questions which they want to solve multiple times.
-7. Students can Report(!) a question 
+6. Bookmarking option helps students to save the questions which they want to solve multiple times.
+7. Students can Report(!) a question if there is any error or if the answer is incorrect.
 8.  
