@@ -15,7 +15,9 @@ Elaborating on the project :
 
 #Authors 
 
-| First Header  | Second Header |
+| Name  | Github ID |
 | ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Chaitanya  |   |
+| Anudeep  |   |
+| Srisai  |   |
+| Bhargav  |   |
