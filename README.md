@@ -1,5 +1,7 @@
 # PrepBoost 
+ “Education is not the answer to the question. Education is the means to the answer to all questions.”
 
+ 
 PrepBoost is designed for students preparing for exams conducted by UPSC (Union Public Service Commission) of India. UPSC conducts various exams every year like the CSE (Civil Services Examination), CDS (Combined Defense Services), CAPF (Central Armed Police Forces), NDA (National Defense Academy), and others. Our vision is to help students during their preparation with the power of technology to make their preparation easier, smarter &amp; enjoyable.
 
 Elaborating on the project : 
