@@ -13,11 +13,11 @@ Elaborating on the project :
 7. Bookmarking option helps students to save the questions which they want to solve multiple times.
 8. Students can Report(!) a question if there is any error or if the answer is incorrect.
 
-#TechStack :
+# TechStack :
 
 React, GoLang, MySQL, Elasticsearch
 
-#Authors
+# Authors
 
 | Name  | Github ID | 
 | ------------- | ------------- |
