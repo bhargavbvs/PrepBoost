@@ -15,7 +15,7 @@ Elaborating on the project :
 
 #TechStack :
 
-React, GoLang, MySQL, Elasticsearch,  
+React, GoLang, MySQL, Elasticsearch
 
 #Authors
 
@@ -23,5 +23,5 @@ React, GoLang, MySQL, Elasticsearch,
 | ------------- | ------------- |
 | Chaitanya  | CHAITANYA1120508 |
 | Anudeep  | anudeepreddy36 |
-| Srisai  | srisai1234 |
+| Sri Sai  | srisai1234 |
 | Bhargav  | bhargavbvs |
