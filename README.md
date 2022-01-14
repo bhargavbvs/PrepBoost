@@ -17,7 +17,7 @@ Elaborating on the project :
 
 # Tech Stack :
 
-React, GoLang, MySQL, Elasticsearch
+React, Golang, MySQL, Elasticsearch
 
 # Authors
 
