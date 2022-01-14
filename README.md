@@ -19,9 +19,9 @@ React, GoLang, MySQL, Elasticsearch,
 
 #Authors
 
-| Name  | Github ID | Roll No |
+| Name  | Github ID | 
 | ------------- | ------------- |
-| Chaitanya  |   |
-| Anudeep  |  |
-| Srisai  |  |
-| Bhargav  |   |
+| Chaitanya  | CHAITANYA1120508 |
+| Anudeep  | anudeepreddy36 |
+| Srisai  | srisai1234 |
+| Bhargav  | bhargavbvs |
