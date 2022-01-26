@@ -34,7 +34,7 @@ Elaborating on the details of the project :
 
 # Tech Stack :
 
-React, Golang, MySQL, Elasticsearch
+React, Golang, SQLite, Elasticsearch
 
 # Team Members :
 
