@@ -1,28 +1,24 @@
 package main
 
 import (
-	"database/sql"
+	controllers "prepboost.com/web/controllers/users"
+	"prepboost.com/web/database"
+
 	"fmt"
 	"net/http"
 
-	"github.com/gorilla/mux"
+	_ "github.com/jinzhu/gorm/dialects/sqlite"
 	_ "github.com/mattn/go-sqlite3"
 )
 
 func main() {
-	db, _ := sql.Open("sqlite3", "./prepboost.db")
-	feed := prepboost.FromSQLite(db)
 
-	r := mux.NewRouter()
-	// r.Use(mux.)
+	db := database.DatabaseConnection()
 
-	r.HandleFunc("/users/{id}", GetUsers).Methods("GET")
-	r.HandleFunc("/users", CreateUser).Methods("POST")
-	r.HandleFunc("/users/{id}", UpdateUser).Methods("PUT")
-	r.HandleFunc("/users/{id}", DeleteUser).Methods("DELETE")
+	router := controllers.InitializeUserHandlers(db)
+	defer db.Close()
 
-	fmt.Println("Watching on port: 3000")
-	http.ListenAndServe(":3000", r)
+	fmt.Println("Watching on port: 8080")
+	http.ListenAndServe(":8080", router)
 
-	// statement.Exec()
 }
