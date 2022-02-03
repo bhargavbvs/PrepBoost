@@ -20,6 +20,12 @@ func HandleUserCreationUpdationErrors(user database.UserJson, db *gorm.DB, id in
 		err = "User with Mobile Number Already exists " + user.Mobile
 		return err
 	}
+
+	result = db.Where(" id = ? ", id).First(&dbUser)
+	if result.RowsAffected == 0 && id > 0 {
+		err = "User with id not exists" + string(dbUser.ID)
+		return err
+	}
 	return ""
 }
 
