@@ -5,12 +5,12 @@ import CardItem from './CardItem';
 function YearCards() {
   return (
     <div className='cards'>
-      <h1>Check out the questions of different year here</h1>
+      <h1>Check out the questions of different years here</h1>
       <div className='cards__container'>
         <div className='cards__wrapper'>
           <ul className='cards__items'>
             <CardItem
-              src='images/img_2020.png'
+              src='images/img_2021.png'
               text='2021'
               path='/years'
             />
