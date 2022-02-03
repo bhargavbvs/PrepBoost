@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import './Buttons.css'
 
 function clickme(){
     alert('You clicked me!');
@@ -6,10 +7,13 @@ function clickme(){
 
 function Buttons() {
     return (
-      
+    <div>
+    
       <a href="https://www.youtube.com" target="_blank">
-          <button> Button </button>
+      <img src="/images/Peaky blinders.jpg" alt=""/>
       </a>
+
+    </div>
     );
   }
   
