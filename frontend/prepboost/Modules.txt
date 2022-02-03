@@ -1,0 +1,2 @@
+npm install @material-ui/core @material-ui/icons react-router-dom --save
+npm i -D @babel/core@7.16.12
