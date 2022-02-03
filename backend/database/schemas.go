@@ -1,11 +1,14 @@
 package database
 
-import "time"
+import (
+	"time"
+)
 
 type User struct {
 	ID          uint       `gorm:"primaryKey;autoIncrement"`
 	Username    string     `gorm:"not null"`
 	Mobile      string     `gorm:"not null;unique"`
+	Email       string     `gorm:"null;unique"`
 	Paid        int        `gorm:"not null;default:0"`
 	Search_left int        `gorm:"not null;default:100"`
 	Session_id  string     `gorm:"not null;unique"`
@@ -19,6 +22,14 @@ type UserJson struct {
 	Paid        int
 	Search_left int
 	Session_id  string
+}
+
+type Exams struct {
+	ID         uint       `gorm:"primaryKey;autoIncrement"`
+	Exam       string     `gorm:"not null;unique"`
+	Type       string     `gorm:"not null"`
+	Created_at *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
+	Updated_at *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
 }
 
 func (r *User) Update(
