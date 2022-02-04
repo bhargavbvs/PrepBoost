@@ -42,11 +42,15 @@ func CreateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 
 func UpdateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 	vars := mux.Vars(r)
-	id, _ := strconv.Atoi(vars["id"])
+	id, err := strconv.Atoi(vars["id"])
+	if err != nil {
+		HandleErrorResponse(w, "Id must be a valid integer")
+		return
+	}
 	var user database.User
 	db.First(&user, "id = ?", id)
 	var p database.UserJson
-	err := json.NewDecoder(r.Body).Decode(&p)
+	err = json.NewDecoder(r.Body).Decode(&p)
 	if err != nil {
 		fmt.Println(err)
 		return
