@@ -13,9 +13,9 @@ import (
 func GetYearwiseQuestions(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 	vars := mux.Vars(r)
 	year := vars["year"]
-	var question database.Questions
-	db.First(&question, "year = ?", year)
-	body, err := json.Marshal(question)
+	var question []database.Questions
+	result := db.Find(&question, "year = ?", year)
+	body, err := json.Marshal(result)
 	if err != nil {
 		fmt.Println(err)
 		return

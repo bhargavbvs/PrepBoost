@@ -24,7 +24,7 @@ type UserJson struct {
 	Session_id  string
 }
 
-type Exams struct {
+type Exam struct {
 	ID         uint       `gorm:"primaryKey;autoIncrement"`
 	Exam       string     `gorm:"not null;unique"`
 	Type       string     `gorm:"not null"`
@@ -33,7 +33,9 @@ type Exams struct {
 }
 
 type Questions struct {
-	ID          uint       `gorm:"primaryKey;autoIncrement"`
+	ID          uint `gorm:"primaryKey;autoIncrement"`
+	ExamID      uint
+	Exam        Exam       `gorm:"foreignkey : ExamID"`
 	Year        uint       `gorm:"not null"`
 	Question    string     `gorm:"not null"`
 	Answer      string     `gorm:"not null"`

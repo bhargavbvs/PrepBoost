@@ -13,6 +13,7 @@ func InitializeHandlers(db *gorm.DB) *mux.Router {
 
 	router := mux.NewRouter()
 
+	//Handlers for the Users API
 	router.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
 		controllers.CreateUser(w, r, db)
 	}).Methods("POST")
@@ -26,6 +27,7 @@ func InitializeHandlers(db *gorm.DB) *mux.Router {
 		controllers.DeleteUser(w, r, db)
 	}).Methods("DELETE")
 
+	//Handlers for the Questions API
 	router.HandleFunc("/questions/{year}", func(w http.ResponseWriter, r *http.Request) {
 		controllers_que.GetYearwiseQuestions(w, r, db)
 	}).Methods("GET")
