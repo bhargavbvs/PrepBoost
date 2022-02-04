@@ -1,7 +1,7 @@
 package main
 
 import (
-	controllers "prepboost.com/web/controllers/users"
+	controllers "prepboost.com/web/controllers"
 	"prepboost.com/web/database"
 
 	"fmt"
@@ -15,7 +15,7 @@ func main() {
 
 	db := database.DatabaseConnection()
 
-	router := controllers.InitializeUserHandlers(db)
+	router := controllers.InitializeHandlers(db)
 	defer db.Close()
 
 	fmt.Println("Watching on port: 8080")

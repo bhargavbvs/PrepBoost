@@ -24,7 +24,7 @@ func CreateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 		HandleErrorResponse(w, parsingerr)
 		return
 	}
-	user := database.User{Username: p.Username, Mobile: p.Mobile, Paid: p.Paid, Search_left: p.Search_left, Session_id: p.Session_id}
+	user := database.User{Username: p.Username, Mobile: p.Mobile, Email: p.Email, Paid: p.Paid, Search_left: p.Search_left, Session_id: p.Session_id}
 	result := db.Create(&user)
 	if result.Error != nil {
 		fmt.Println(result.Error.Error())
