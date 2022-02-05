@@ -11,7 +11,7 @@ func InitializeUserHandlers(db *gorm.DB) *mux.Router {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("/users/signup", func(w http.ResponseWriter, r *http.Request) {
 		CreateUser(w, r, db)
 	}).Methods("POST")
 	router.HandleFunc("/users/{id}", func(w http.ResponseWriter, r *http.Request) {
