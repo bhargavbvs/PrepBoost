@@ -11,11 +11,11 @@ Deliverables ::
 
 # What we accomplished (6/6 closed stories in sprint 1)
 
-Task 1- As a DevOps engineer, I want to set up version control, integrations with the SQLite database, 
+Task 1- As a DevOps engineer, I want to set up version control, integrations with the SQLite database with GORM and set up Mux router for handlers.
 
 Task 2- As a frontend engineer, I want to setup React Project, 
 
-PBI 3 - As a partygoer, I want to see list of parties going around me right now
+Task 3 - As a user, I want to create my profile in the 
 
 
 
