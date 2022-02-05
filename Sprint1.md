@@ -19,23 +19,31 @@ Task 3 - As a backend engineer, I want user login my profile in the website befo
 
 ##### Functions ::
 
+- User can create his profile using his mobile number and username - Login API.
+- User can provide his email to get further notifications which is not mandatory - Login API.
+- User can modify his details on his own further using the - Update User API. 
+- User can delete his profile if he want to leave - Delete User API.
+
+Task 4 - As a frontend engineer, I want to create the home page, yearwise questions page.
+
+##### Functions ::
+
+- The naviation bar displays the home, year wise and topic wise buttons
+- The homepage displays the Prepboost welcome message
+- The year wise button displays the year wise questions categorized every year of the past 2021 to 2011 years. 
+
+
+Task 5 - As a backend engineer, I want to set up the Questions API so that year wise questions can be given. 
+
+##### Functions ::
+
 - User can create his profile using his mobile number and username. 
-- User can provide his email if need which is not mandatory.
-- 
 
-Task 4 - As a frontend engineer, I want to create the home page, yearwise questions page
+Task 6 - As a frontend engineer, I want to create the topicwise questions page. 
 
 ##### Functions ::
 
-
-
-Task 5 - As a backend engineer, I want to set up the 
-
-##### Functions ::
-
-Task 6 - As a frontend engineer, I want to create the topicwise questions page.
-
-##### Functions ::
+- 18 topics have been found and the topics along with the respective images relevant for the students. 
 
 
 
