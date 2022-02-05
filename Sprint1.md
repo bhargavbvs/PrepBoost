@@ -15,11 +15,28 @@ Task 1- As a DevOps engineer, I want to set up version control, integrations wit
 
 Task 2- As a frontend engineer, I want to setup a React Project by using react-router-dom to create user interface framework.
 
-Task 3 - As a user, I want to create my profile in the website before answering the questions.
+Task 3 - As a backend engineer, I want user login my profile in the website before answering the questions.
 
 ##### Functions ::
 
-- [x] 
+- User can create his profile using his mobile number and username. 
+- User can provide his email if need which is not mandatory.
+- 
+
+Task 4 - As a frontend engineer, I want to create the home page, yearwise questions page
+
+##### Functions ::
+
+
+
+Task 5 - As a backend engineer, I want to set up the 
+
+##### Functions ::
+
+Task 6 - As a frontend engineer, I want to create the topicwise questions page.
+
+##### Functions ::
+
 
 
 
