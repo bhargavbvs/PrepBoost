@@ -11,7 +11,7 @@ Deliverables ::
 
 # What we accomplished (6/6 closed stories in sprint 1)
 
-Task 1- As a DevOps engineer, I want to set up version control, integrations with the SQLite database with GORM and set up Mux router for handlers.
+Task 1- As a DevOps engineer, I want to set up version control, integrations with SQLite and GORM along with the Mux router for handlers.
 
 Task 2- As a frontend engineer, I want to setup React Project, 
 
