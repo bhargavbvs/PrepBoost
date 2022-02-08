@@ -20,6 +20,7 @@ type UserJson struct {
 	Username    string
 	Mobile      string
 	Paid        int
+	Email       string
 	Search_left int
 	Session_id  string
 }
