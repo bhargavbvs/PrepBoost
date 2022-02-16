@@ -23,15 +23,6 @@ type User struct {
 	Updated_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
 }
 
-type UserJson struct {
-	Username    string
-	Mobile      string
-	Paid        int
-	Email       string
-	Search_left int
-	Session_id  string
-}
-
 type Exam struct {
 	ID         uint       `gorm:"primaryKey;autoIncrement"`
 	Exam       string     `gorm:"not null;unique"`
@@ -59,21 +50,7 @@ type Questions struct {
 func init() {
 	db = config.DatabaseConnection()
 	// db = config.GetDB()
-	db.AutoMigrate(&User{}, &UserJson{}, &Exam{}, &Questions{})
-}
-
-func (r *User) Update(
-	Username string,
-	Mobile string,
-	Paid int,
-	Search_left int,
-	Session_id string) int {
-	r.Username = Username
-	r.Mobile = Mobile
-	r.Paid = Paid
-	r.Search_left = Search_left
-	r.Session_id = Session_id
-	return 1
+	db.AutoMigrate(&User{}, &Exam{}, &Questions{})
 }
 
 func (u *User) CreateUser() *User {
@@ -82,10 +59,10 @@ func (u *User) CreateUser() *User {
 	return u
 }
 
-func GetUserById(Id int64) *User {
+func GetUserById(Id int64) (*User, *gorm.DB) {
 	var user User
 	db.Where("ID=?", Id).Find(&user)
-	return &user
+	return &user, db
 }
 
 func DeleteUser(ID int64) User {
@@ -93,23 +70,3 @@ func DeleteUser(ID int64) User {
 	db.Where("ID=?", ID).Delete(user)
 	return user
 }
-
-// func FromSQLite(conn *sql.DB) *SQLite {
-
-// 	statement, _ := conn.Prepare(`
-// 	CREATE TABLE IF NOT EXISTS
-// 		questions (
-// 			ID INTEGER PRIMARY KEY,
-// 			question TEXT,
-// 			optionA TEXT,
-// 			optionB TEXT,
-// 			optionC TEXT,
-// 			optionD TEXT
-// 		);
-// 	`)
-
-// 	statement.Exec()
-// 	return &SQLite{
-// 		DB: conn,
-// 	}
-// }
