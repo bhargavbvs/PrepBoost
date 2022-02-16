@@ -7,7 +7,7 @@ import (
 	models "prepboost.com/web/models"
 )
 
-func HandleUserCreationUpdationErrors(user models.UserJson, db *gorm.DB, id int) string {
+func HandleUserCreationUpdationErrors(user models.User, db *gorm.DB, id int) string {
 	var dbUser models.User
 	err := ""
 	result := db.Where("session_id = ? and id != ?", user.Session_id, id).First(&dbUser)

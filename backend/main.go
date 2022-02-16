@@ -18,6 +18,7 @@ func main() {
 	router := mux.NewRouter()
 
 	routes.RegisterUserRoutes(router)
+	routes.RegisterQuestionsRoutes(router)
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe("localhost:9010", router))
 

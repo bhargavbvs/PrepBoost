@@ -1,10 +1,10 @@
 package routes
 
-// var RegisterQuestionsRoutes = func(router *mux.Router) {
-// 	router.HandleFunc("/users/login/", controllers_que.GetYearwiseQuestions).Methods("GET")
-// }
+import (
+	"github.com/gorilla/mux"
+	controllers_que "prepboost.com/web/controllers/questions"
+)
 
-//Handlers for the Questions API
-// router.HandleFunc("/questions/{year}", func(w http.ResponseWriter, r *http.Request) {
-// 	controllers_que.GetYearwiseQuestions(w, r, db)
-// }).Methods("GET")
+var RegisterQuestionsRoutes = func(router *mux.Router) {
+	router.HandleFunc("/questions/{year}", controllers_que.GetYearwiseQuestions).Methods("GET")
+}
