@@ -12,17 +12,17 @@ function TopicCards() {
             <CardItem
               src='images/eco_min.png'
               text='Economy'
-              path='/years'
+              path='/topicquestions'
             />
             <CardItem
               src='images/agri_min.png'
               text='Agriculture'
-              path='/years'
+              path='/topicquestions'
             />
             <CardItem
               src='images/env_min.png'
               text='Environment'
-              path='/years'
+              path='/topicquestions'
             />
           </ul>
           
@@ -30,17 +30,17 @@ function TopicCards() {
             <CardItem
               src='images/pol_min.png'
               text='Pol and Gov'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/ir_min.png'
               text='IR'
-              path='/sign-up'
+              path='/topicquestions'
             />
             <CardItem
               src='images/sci_min.png'
               text='S and T'
-              path='/sign-up'
+              path='/topicquestions'
             />
             </ul>
             
@@ -48,17 +48,17 @@ function TopicCards() {
             <CardItem
               src='images/mod_min.png'
               text='Modern'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/anc_min.png'
               text='Ancient'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/med_min.png'
               text='Medieval'
-              path='/topics'
+              path='/topicquestions'
             />
             </ul>
             
@@ -66,17 +66,17 @@ function TopicCards() {
             <CardItem
               src='images/cul_min.png'
               text='Culture'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/indgeo_min.png'
               text='Indian Geog'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/geo_min.png'
               text='World Geog'
-              path='/topics'
+              path='/topicquestions'
             />
             </ul>
             
@@ -84,17 +84,17 @@ function TopicCards() {
             <CardItem
               src='images/maps_min.png'
               text='Mapping'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/curr_min.png'
               text='Current'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/report_min.jpeg'
               text='Reports'
-              path='/topics'
+              path='/topicquestions'
             />
             </ul>
             
@@ -102,17 +102,17 @@ function TopicCards() {
             <CardItem
               src='images/schemes_min.png'
               text='Schemes'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/postin_min.png'
               text='Post Indep'
-              path='/topics'
+              path='/topicquestions'
             />
             <CardItem
               src='images/misc_min.png'
               text='Miscellaneous'
-              path='/topics'
+              path='/topicquestions'
             />
             </ul>
         </div>
