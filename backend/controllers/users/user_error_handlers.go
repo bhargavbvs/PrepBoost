@@ -4,11 +4,11 @@ import (
 	"net/http"
 
 	"github.com/jinzhu/gorm"
-	"prepboost.com/web/database"
+	models "prepboost.com/web/models"
 )
 
-func HandleUserCreationUpdationErrors(user database.UserJson, db *gorm.DB, id int) string {
-	var dbUser database.User
+func HandleUserCreationUpdationErrors(user models.UserJson, db *gorm.DB, id int) string {
+	var dbUser models.User
 	err := ""
 	result := db.Where("session_id = ? and id != ?", user.Session_id, id).First(&dbUser)
 	if result.RowsAffected != 0 {

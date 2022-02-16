@@ -8,45 +8,53 @@ import (
 
 	"github.com/gorilla/mux"
 	"github.com/jinzhu/gorm"
-	"prepboost.com/web/database"
+
+	// config "prepboost.com/web/config"
+	models "prepboost.com/web/models"
+	"prepboost.com/web/utils"
 )
 
-func CreateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
-	var p database.UserJson
+var db *gorm.DB
 
-	err := json.NewDecoder(r.Body).Decode(&p)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusBadRequest)
-		return
-	}
-	parsingerr := HandleUserCreationUpdationErrors(p, db, -1)
-	if parsingerr != "" {
-		HandleErrorResponse(w, parsingerr)
-		return
-	}
-	user := database.User{Username: p.Username, Mobile: p.Mobile, Email: p.Email, Paid: p.Paid, Search_left: p.Search_left, Session_id: p.Session_id}
-	result := db.Create(&user)
-	if result.Error != nil {
-		fmt.Println(result.Error.Error())
-	}
-	body, err := json.Marshal(user)
+// func init() {
+// 	db = config.DatabaseConnection()
+// 	db.AutoMigrate(&Book{})
+// }
+
+func CreateUser(w http.ResponseWriter, r *http.Request) {
+
+	CreateUser := &models.User{}
+	utils.ParseJsonBody(r, CreateUser)
+
+	u := CreateUser.CreateUser()
+	res, err := json.Marshal(u)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+	// parsingerr := HandleUserCreationUpdationErrors(p, db, -1)
+	// if parsingerr != "" {
+	// 	HandleErrorResponse(w, parsingerr)
+	// 	return
+	// }
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write(body)
+	w.Write(res)
 
 }
 
-func UpdateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
+func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id, _ := strconv.Atoi(vars["id"])
-	var user database.User
+	id, err := strconv.Atoi(vars["id"])
+	if err != nil {
+		HandleErrorResponse(w, "Id must be a valid integer")
+		return
+	}
+	var user models.User
 	db.First(&user, "id = ?", id)
-	var p database.UserJson
-	err := json.NewDecoder(r.Body).Decode(&p)
+	var p models.UserJson
+	err = json.NewDecoder(r.Body).Decode(&p)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -71,10 +79,10 @@ func UpdateUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 
 }
 
-func DeleteUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
+func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["id"]
-	var user database.User
+	var user models.User
 	db.First(&user, "id = ?", id)
 	body, err := json.Marshal(user)
 	db.Delete(&user)
@@ -88,16 +96,21 @@ func DeleteUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
 
 }
 
-func GetUser(w http.ResponseWriter, r *http.Request, db *gorm.DB) {
+func GetUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id := vars["id"]
-	var user database.User
-	db.First(&user, "id = ?", id)
-	body, err := json.Marshal(user)
+	userId := vars["userId"]
+	ID, err := strconv.ParseInt(userId, 0, 0)
+	if err != nil {
+		fmt.Println("error while parsing")
+	}
+
+	userDetails := models.GetUserById(ID)
+	body, err := json.Marshal(userDetails)
 	if err != nil {
 		fmt.Println(err)
 		return
 	}
+
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(body)
