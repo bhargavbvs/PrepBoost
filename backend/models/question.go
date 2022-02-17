@@ -25,3 +25,9 @@ func GetQuestionsByYear(Year int64) []Questions {
 	db.Where("Year=?", Year).Find(&Questions)
 	return Questions
 }
+
+func GetBookmarkedQuestions(userId int64) []Questions {
+	var Questions []Questions
+	db.Where("Year=?", userId).Find(&Questions)
+	return Questions
+}

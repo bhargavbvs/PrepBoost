@@ -6,5 +6,5 @@ import (
 )
 
 var RegisterBookmarkRoutes = func(router *mux.Router) {
-	router.HandleFunc("/questions/{year}", controllers_que.GetYearwiseQuestions).Methods("GET")
+	router.HandleFunc("/bookmarks/{userId}", controllers_que.GetBookmarkedQuestions).Methods("GET")
 }
