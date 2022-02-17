@@ -8,7 +8,7 @@ import (
 )
 
 func DBMigrate(db *gorm.DB) {
-	db.AutoMigrate(&User{})
+	db.AutoMigrate(&User{}, &Questions{}, &Exam{})
 }
 
 func checkErr(err error, sucess_message string) {
