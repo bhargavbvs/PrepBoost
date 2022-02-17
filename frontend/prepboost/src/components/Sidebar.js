@@ -68,7 +68,7 @@ function App() {
         </Drawer>
         <Switch>
         <Route exact path="/">
-            
+            <Home/>
           </Route>
           <Route exact path="/years">
             <Years/>
