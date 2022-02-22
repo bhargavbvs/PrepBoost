@@ -1,6 +1,7 @@
 package models
 
 import (
+	"database/sql"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -9,8 +10,11 @@ import (
 
 var db *gorm.DB
 
+var db3 *sql.DB
+
 func init() {
 	db = config.DatabaseConnection()
+
 	// db = config.GetDB()
 	db.AutoMigrate(&User{}, &Exam{}, &Questions{})
 }
