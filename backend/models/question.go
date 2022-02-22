@@ -1,26 +1,22 @@
 package models
 
-import (
-	"time"
-)
-
 type Questions struct {
-	ID          uint       `gorm:"primaryKey;autoIncrement"`
-	Exam        string     `gorm:"not null"`
-	Year        uint       `gorm:"not null"`
-	Question    string     `gorm:"not null"`
-	Answer      string     `gorm:"not null"`
-	Option1     string     `gorm:"not null"`
-	Option2     string     `gorm:"not null"`
-	Option3     string     `gorm:"not null"`
-	Option4     string     `gorm:"not null"`
-	Explanation string     `gorm:"null"`
-	Created_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
-	Updated_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
+	ID          uint   `gorm:"primaryKey;autoIncrement"`
+	Exam        string `gorm:"not null"`
+	Type        string `gorm:"not null"`
+	Year        uint   `gorm:"not null"`
+	Question    string `gorm:"not null"`
+	Answer      string `gorm:"not null"`
+	Option1     string `gorm:"not null"`
+	Option2     string `gorm:"not null"`
+	Option3     string `gorm:"not null"`
+	Option4     string `gorm:"not null"`
+	Explanation string `gorm:"null"`
+	Learning    string `gorm:"null"`
+	Source      string `gorm:"null"`
 }
 
 func GetQuestionsByYear(Year int64) []Questions {
-	// var Questions []Questions
 	var que []Questions
 
 	var queQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
@@ -33,7 +29,6 @@ func GetQuestionsByYear(Year int64) []Questions {
 
 	db.Raw(queQuery, 1, Year).Find(&que)
 	db.LogMode(true)
-	// fmt.Println(row)
 	return que
 }
 
