@@ -1,7 +1,6 @@
 package models
 
 import (
-	"database/sql"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -10,16 +9,13 @@ import (
 
 var db *gorm.DB
 
-var db3 *sql.DB
-
 func init() {
 	db = config.DatabaseConnection()
 
-	// db = config.GetDB()
-	db.AutoMigrate(&User{}, &Exam{}, &Questions{})
+	db.AutoMigrate(&User{}, &Exams{}, &Questions{})
 }
 
-type Exam struct {
+type Exams struct {
 	ID         uint       `gorm:"primaryKey;autoIncrement"`
 	Exam       string     `gorm:"not null;unique"`
 	Type       string     `gorm:"not null"`
