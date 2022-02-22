@@ -19,6 +19,7 @@ type Questions struct {
 func GetQuestionsByYear(Year int64) []Questions {
 	var que []Questions
 
+	//Query to fetch the questions of that specific year and exam
 	var queQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
 		"topics.topic, subtopics.subtopic, questions.answer, questions.option1, questions.option2," +
 		"questions.option3, questions.option4, questions.explanation, questions.learning," +

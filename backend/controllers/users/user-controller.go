@@ -8,15 +8,9 @@ import (
 
 	"github.com/gorilla/mux"
 
-	// config "prepboost.com/web/config"
 	models "prepboost.com/web/models"
 	"prepboost.com/web/utils"
 )
-
-// func init() {
-// 	db = config.DatabaseConnection()
-// 	db.AutoMigrate(&Book{})
-// }
 
 func CreateUser(w http.ResponseWriter, r *http.Request) {
 
@@ -29,11 +23,6 @@ func CreateUser(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
-	// parsingerr := HandleUserCreationUpdationErrors(p, db, -1)
-	// if parsingerr != "" {
-	// 	HandleErrorResponse(w, parsingerr)
-	// 	return
-	// }
 
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
