@@ -50,6 +50,27 @@ func GetQuestionsByYear(Year int64) []Questions {
 	return que
 }
 
+//Get questions based on the specific topic that user wants
+func GetTopicwiseQuestions(userId int64) []TopicwiseQuestions {
+	var que []TopicwiseQuestions
+
+	//Query to fetch the questions of that specific year and exam
+	var topicQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
+		"topics.topic, subtopics.subtopic, questions.answer, user_answers.answered, user_answers.correct, " +
+		"questions.option1, questions.option2, questions.option3, questions.option4, questions.explanation, " +
+		"questions.learning, questions.source FROM questions " +
+		"INNER JOIN topics ON questions.topic_id = topics.id " +
+		"INNER JOIN subtopics ON questions.subtopic1_id = subtopics.id " +
+		"INNER JOIN exams ON questions.exam_id = exams.id " +
+		"LEFT JOIN user_answers ON questions.id = user_answers.question_id " +
+		"AND user_answers.user_id = ? WHERE exam_id = ? and questions.topic_id = ? and " +
+		"questions.subtopic1_id = ? ORDER BY id")
+
+	db.Raw(topicQuery, userId, 1, 1, 1).Find(&que)
+	db.LogMode(true)
+	return que
+}
+
 func GetBookmarkedQuestions(userId int64) []Questions {
 	var Questions []Questions
 	db.Where("Year=?", userId).Find(&Questions)
