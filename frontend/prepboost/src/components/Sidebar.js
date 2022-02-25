@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import Years from '../components/pages/Years';
 import Home from '../components/pages/Home';
 import Topics from '../components/pages/Topics';
+import TopicQuestions from '../components/pages/TopicQuestions';
 
 import {
   BrowserRouter as Router,
@@ -75,6 +76,9 @@ function App() {
           </Route>
           <Route exact path="/topics">
             <Topics/>
+          </Route>
+          <Route exact path="/topicquestions">
+            <TopicQuestions/>
           </Route>
         </Switch>
       </div>

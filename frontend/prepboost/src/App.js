@@ -11,15 +11,15 @@ import TopicQuestions from './components/pages/TopicQuestions';
 function App() {
   return (
     <>
-      <Router>
-        <Sidebar />
+    <Sidebar />
+      {/* <Router>
         <Switch>
           <Route path='/' exact component={Home} />
           <Route path='/years' component={Years} />
           <Route path='/topics' component={Topics} />
           <Route path='/topicquestions' component={TopicQuestions} />
         </Switch>
-      </Router>
+      </Router> */}
     </>
   );
 }
