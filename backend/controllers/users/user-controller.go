@@ -59,6 +59,9 @@ func UpdateUser(w http.ResponseWriter, r *http.Request) {
 	if updateUser.Mobile != "" {
 		userDetails.Mobile = updateUser.Mobile
 	}
+	if updateUser.Mobile != "" {
+		userDetails.Password = updateUser.Password
+	}
 
 	db.Save(&userDetails)
 	res, _ := json.Marshal(userDetails)
