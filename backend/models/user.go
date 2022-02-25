@@ -11,6 +11,7 @@ type User struct {
 	Username    string     `gorm:"not null"`
 	Mobile      string     `gorm:"not null;unique"`
 	Email       string     `gorm:"null"`
+	Password    string     `gorm:"not null"`
 	Paid        int        `gorm:"not null;default:0"`
 	Search_left int        `gorm:"not null;default:100"`
 	Session_id  string     `gorm:"not null;unique"`
