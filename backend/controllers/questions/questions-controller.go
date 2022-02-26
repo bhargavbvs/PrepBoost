@@ -30,6 +30,26 @@ func GetYearwiseQuestions(w http.ResponseWriter, r *http.Request) {
 	w.Write(body)
 }
 
+//Get questions based on the respective topic
+func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	userId := vars["userId"]
+	usID, err := strconv.ParseInt(userId, 0, 0)
+	questions := models.GetTopicwiseQuestions(usID)
+	if err != nil {
+		fmt.Println("error while parsing questions year")
+	}
+
+	body, err := json.Marshal(questions)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
+}
+
 //Get questions bookmarked by the user
 func GetBookmarkedQuestions(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
