@@ -40,7 +40,7 @@ function App() {
           classes={{ paper: classes.drawerPaper }}
         >
           <List>
-            <Link to="/" className={classes.link}>
+            <Link to="/home" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <HomeIcon />
@@ -67,9 +67,9 @@ function App() {
           </List>
         </Drawer>
         <Switch>
-        <Route exact path="/">
+        {/* <Route exact path="/home">
             <Home/>
-          </Route>
+          </Route> */}
           <Route exact path="/years">
             <Years/>
           </Route>
