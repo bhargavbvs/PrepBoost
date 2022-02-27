@@ -4,6 +4,8 @@ import Years from '../components/pages/Years';
 import Home from '../components/pages/Home';
 import Topics from '../components/pages/Topics';
 import TopicQuestions from '../components/pages/TopicQuestions';
+import Login from '../components/Login';
+import Signup from '../components/SignUp';
 
 import {
   BrowserRouter as Router,
@@ -41,6 +43,14 @@ function App() {
           classes={{ paper: classes.drawerPaper }}
         >
           <List>
+          <Link to="/login" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Login"} />
+              </ListItem>
+            </Link>
             <Link to="/home" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
@@ -68,9 +78,9 @@ function App() {
           </List>
         </Drawer>
         <Switch>
-        {/* <Route exact path="/home">
+        { <Route exact path="/home">
             <Home/>
-          </Route> */}
+          </Route> }
           <Route exact path="/years">
             <Years/>
           </Route>
@@ -79,6 +89,12 @@ function App() {
           </Route>
           <Route exact path="/topicquestions">
             <TopicQuestions/>
+          </Route>
+          <Route exact path="/login">
+            <Login/>
+          </Route>
+          <Route exact path="/signup">
+            <Signup/>
           </Route>
         </Switch>
       </div>
