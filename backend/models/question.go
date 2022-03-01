@@ -72,7 +72,21 @@ func GetTopicwiseQuestions(userId int64) []TopicwiseQuestions {
 }
 
 func GetBookmarkedQuestions(userId int64) []Questions {
-	var Questions []Questions
-	db.Where("Year=?", userId).Find(&Questions)
-	return Questions
+	var bookmarks []Questions
+
+	//Query to fetch the questions of that specific year and exam
+	var topicQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
+		"topics.topic, subtopics.subtopic, questions.answer, questions.option1, questions.option2, " +
+		"questions.option3, questions.option4, questions.explanation, " +
+		"questions.learning, questions.source FROM questions " +
+		"INNER JOIN topics ON questions.topic_id = topics.id " +
+		"INNER JOIN subtopics ON questions.subtopic1_id = subtopics.id " +
+		"INNER JOIN exams ON questions.exam_id = exams.id " +
+		"LEFT JOIN bookmarks ON questions.id = bookmarks.question_id " +
+		"AND bookmarks.user_id = ? WHERE exam_id = ? " +
+		"ORDER BY id")
+
+	db.Raw(topicQuery, userId, 1).Find(&bookmarks)
+	db.LogMode(true)
+	return bookmarks
 }

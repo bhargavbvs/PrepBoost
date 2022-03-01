@@ -50,7 +50,7 @@ func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
 	w.Write(body)
 }
 
-//Get questions bookmarked by the user
+//Get questions bookmarked by the user according to the respective exam
 func GetBookmarkedQuestions(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userId := vars["userId"]

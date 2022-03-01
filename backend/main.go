@@ -19,6 +19,7 @@ func main() {
 
 	routes.RegisterUserRoutes(router)
 	routes.RegisterQuestionsRoutes(router)
+	routes.RegisterBookmarkRoutes(router)
 	http.Handle("/", router)
 	log.Fatal(http.ListenAndServe("localhost:9010", router))
 
