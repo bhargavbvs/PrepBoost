@@ -6,18 +6,24 @@
 }
 
 .home,
-.years,
-.topics,
 .sign-up {
   display: flex;
   height: 90vh;
+  width: 180vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
 }
 
+.login,
+.signup,
+.years,
+.topics{
+  width: 1800vh;
+}
+
 .topicquestions {
-  background-color: #252d4a;
+  background-color: #49d612;
   width: 450px;
   min-height: 200px;
   height: min-content;
@@ -58,21 +64,6 @@
   justify-content: space-between;
 }
 
-.years {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
-
-.topics {
-  background-position: center;
-  background-size: fill;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
-}
 
 .sign-up {
   background-position: center;
