@@ -3,6 +3,7 @@ package models
 import (
 	"time"
 
+	jwt "github.com/dgrijalva/jwt-go"
 	"github.com/jinzhu/gorm"
 )
 
@@ -19,10 +20,26 @@ type User struct {
 	Updated_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
 }
 
+type LoginUser struct {
+	Username string `gorm:"not null"`
+	Password string `gorm:"not null"`
+}
+
+type Claims struct {
+	Username string `json:"username"`
+	jwt.StandardClaims
+}
+
 func (u *User) CreateUser() *User {
 	db.NewRecord(u)
 	db.Create(&u)
 	return u
+}
+
+func UserPasswordCheck(loginUser LoginUser) string {
+	var user User
+	db.Where("username=?", loginUser.Username).Find(&user)
+	return user.Password
 }
 
 func GetUserById(Id int64) (*User, *gorm.DB) {
