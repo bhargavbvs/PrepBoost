@@ -12,7 +12,7 @@ import Signup from './components/SignUp';
 
 function App() {
   return (
-    <>
+    <div className='sidebar' id = "container">
     <Sidebar />
     {/* <Login /> */}
       {/* <Router>
@@ -25,7 +25,7 @@ function App() {
           <Route path='/topicquestions' component={TopicQuestions} />
         </Switch>
       </Router> */}
-    </>
+    </div>
   );
 }
 

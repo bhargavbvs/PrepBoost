@@ -51,7 +51,7 @@ function App() {
                 <ListItemText primary={"Login"} />
               </ListItem>
             </Link>
-            <Link to="/home" className={classes.link}>
+            <Link to="/" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
                   <HomeIcon />
@@ -78,7 +78,7 @@ function App() {
           </List>
         </Drawer>
         <Switch>
-        { <Route exact path="/home">
+        { <Route exact path="/">
             <Home/>
           </Route> }
           <Route exact path="/years">
