@@ -24,6 +24,7 @@ type User struct {
 type LoginUser struct {
 	Username string `gorm:"not null"`
 	Password string `gorm:"not null"`
+	Token    string `gorm:"null"`
 }
 
 type Claims struct {

@@ -1,6 +1,8 @@
 package controllers
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"net/http"
 	"net/http/httptest"
@@ -47,23 +49,27 @@ func TestGetUser(t *testing.T) {
 }
 
 // Test - 2
-// func Test_addUser(t *testing.T) {
-// 	samplePerson := .Person{Id: 1, UserName: "username", Password: "password"}
-// 	bytePerson, _ := json.Marshal(samplePerson)
+//To test the Login details of the user
+func Test_Login(t *testing.T) {
+	models.Init()
 
-// 	req, err := http.NewRequest("POST", "/signUp", bytes.NewReader(bytePerson))
+	samplePerson := models.LoginUser{Username: "bhargav bffvs", Password: "mypass"}
+	bytePerson, _ := json.Marshal(samplePerson)
 
-// 	if err != nil {
-// 		t.Fatal(err)
-// 	}
-// 	rr := httptest.NewRecorder()
-// 	//rr.Body = bytes.NewBuffer(bytePerson)
-// 	handler := http.HandlerFunc(addUser)
-// 	handler.ServeHTTP(rr, req)
-// 	if status := rr.Code; status != http.StatusOK {
-// 		t.Errorf("handler returned wrong status code : got %v want %v\n", status, http.StatusOK)
-// 	}
+	req, err := http.NewRequest("POST", "/login", bytes.NewReader(bytePerson))
+	if err != nil {
+		t.Fatal(err)
+	}
 
-// 	req.Header.Set("Token", samplePerson.Token)
+	rr := httptest.NewRecorder()
+	handler := http.HandlerFunc(LoginUser)
+	handler.ServeHTTP(rr, req)
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code : got %v want %v\n", status, http.StatusOK)
+	}
 
-// }
+	req.Header.Set("Token", samplePerson.Token)
+	fmt.Print(samplePerson.Token)
+	fmt.Print("here token")
+
+}
