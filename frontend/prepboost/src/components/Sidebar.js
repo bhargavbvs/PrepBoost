@@ -6,6 +6,7 @@ import Topics from '../components/pages/Topics';
 import TopicQuestions from '../components/pages/TopicQuestions';
 import Login from '../components/Login';
 import Signup from '../components/SignUp';
+import Bookmarks from '../components/pages/Bookmarks';
 
 import {
   BrowserRouter as Router,
@@ -21,6 +22,7 @@ import {
 import HomeIcon from "@material-ui/icons/Home";
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import TopicIcon from '@material-ui/icons/LibraryBooks';
+import BookmarksIcon from '@material-ui/icons/Bookmarks';
 
 const useStyles = makeStyles((theme) => ({
   drawerPaper: { width: 'inherit' },
@@ -75,6 +77,14 @@ function App() {
                 <ListItemText primary={"Topic wise Questions"} />
               </ListItem>
             </Link>
+            <Link to="/bookmarks" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <BookmarksIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Bookmarks"} />
+              </ListItem>
+            </Link>
           </List>
         </Drawer>
         <Switch>
@@ -95,6 +105,9 @@ function App() {
           </Route>
           <Route exact path="/signup">
             <Signup/>
+          </Route>
+          <Route exact path="/bookmarks">
+            <Bookmarks/>
           </Route>
         </Switch>
       </div>
