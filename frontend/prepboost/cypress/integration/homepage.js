@@ -6,4 +6,13 @@ describe("renders the home page", () => {
       cy.findAllByText("Year wise Questions").should("exist");
       cy.contains("Welcome to PREPBOOST").should("exist");
       });
+
+      it("routes to a correct pages", () => {
+           cy.findAllByText("Login").click();
+           cy.url().should("include", "login");
+           cy.findAllByText("Year wise Questions").click();
+           cy.url().should("include", "years");
+           cy.findAllByText("Topic wise Questions").click();
+           cy.url().should("include", "topics");
+         });
 });
