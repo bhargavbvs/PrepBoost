@@ -38,6 +38,7 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
-    "cypress": "^9.5.1"
+    "cypress": "^9.5.1",
+    "jest": "^27.5.1"
   }
 }
