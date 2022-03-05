@@ -45,8 +45,8 @@ func GetQuestionsByYear(Year int64) []Questions {
 		"INNER JOIN exams ON questions.exam_id = exams.id " +
 		"WHERE exam_id = ?  and year = ? ORDER BY id")
 
-	db.Raw(queQuery, 1, Year).Find(&que)
-	db.LogMode(true)
+	DB.Raw(queQuery, 1, Year).Find(&que)
+	DB.LogMode(true)
 	return que
 }
 
@@ -66,8 +66,8 @@ func GetTopicwiseQuestions(userId int64) []TopicwiseQuestions {
 		"AND user_answers.user_id = ? WHERE exam_id = ? and questions.topic_id = ? and " +
 		"questions.subtopic1_id = ? ORDER BY id")
 
-	db.Raw(topicQuery, userId, 1, 1, 1).Find(&que)
-	db.LogMode(true)
+	DB.Raw(topicQuery, userId, 1, 1, 1).Find(&que)
+	DB.LogMode(true)
 	return que
 }
 
@@ -86,7 +86,7 @@ func GetBookmarkedQuestions(userId int64) []Questions {
 		"AND bookmarks.user_id = ? WHERE exam_id = ? " +
 		"ORDER BY id")
 
-	db.Raw(topicQuery, userId, 1).Find(&bookmarks)
-	db.LogMode(true)
+	DB.Raw(topicQuery, userId, 1).Find(&bookmarks)
+	DB.LogMode(true)
 	return bookmarks
 }

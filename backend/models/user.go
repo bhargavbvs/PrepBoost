@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	jwt "github.com/dgrijalva/jwt-go"
@@ -31,25 +32,26 @@ type Claims struct {
 }
 
 func (u *User) CreateUser() *User {
-	db.NewRecord(u)
-	db.Create(&u)
+	DB.NewRecord(u)
+	DB.Create(&u)
 	return u
 }
 
 func UserPasswordCheck(loginUser LoginUser) string {
 	var user User
-	db.Where("username=?", loginUser.Username).Find(&user)
+	DB.Where("username=?", loginUser.Username).Find(&user)
 	return user.Password
 }
 
 func GetUserById(Id int64) (*User, *gorm.DB) {
 	var user User
-	db.Where("ID=?", Id).Find(&user)
-	return &user, db
+	fmt.Println("testing request received", Id)
+	DB.Where("ID=?", Id).Find(&user)
+	return &user, DB
 }
 
 func DeleteUser(ID int64) User {
 	var user User
-	db.Where("ID=?", ID).Delete(user)
+	DB.Where("ID=?", ID).Delete(user)
 	return user
 }
