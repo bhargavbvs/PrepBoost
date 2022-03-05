@@ -24,4 +24,5 @@ Deliverables ::
 7. Changed navigation bar from horizontal to vertical.
 8. Implemented unit testing using jest.
 9. Added login and signup pages for user to login and signup.
-10. Integrated frontend with backend for login page component to fetch user details from backend.
+10. Installed axios to integrate front end with backend.
+11. Integrated frontend with backend for login page component to fetch user details from backend.
