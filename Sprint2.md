@@ -15,3 +15,7 @@ Deliverables ::
 4. 10 years Questions data is collected and are categorized according to the specific topic and subtopic. 
 
 # What we accomplished 
+Functions
+Created the questions API to get the year wise specific questions
+Created the bookmark API to get bookmark questions of specific student
+Database migration from SQLite to MySql for multiple user access and scalability
