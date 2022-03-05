@@ -22,7 +22,5 @@ func DatabaseConnection() *gorm.DB {
 	checkErr(err, "Database error")
 
 	// DBMigrate(db)
-
 	return db
-
 }

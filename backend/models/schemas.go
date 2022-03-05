@@ -7,12 +7,12 @@ import (
 	config "prepboost.com/web/config"
 )
 
-var db *gorm.DB
+var DB *gorm.DB
 
-func init() {
-	db = config.DatabaseConnection()
+func Init() {
+	DB = config.DatabaseConnection()
 
-	db.AutoMigrate(&User{}, &Exams{}, &Questions{})
+	DB.AutoMigrate(&User{}, &Exams{}, &Questions{})
 }
 
 type Exams struct {

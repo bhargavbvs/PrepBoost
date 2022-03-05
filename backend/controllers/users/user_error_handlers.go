@@ -21,11 +21,11 @@ func HandleUserCreationUpdationErrors(user models.User, db *gorm.DB, id int) str
 		return err
 	}
 
-	result = db.Where(" id = ? ", id).First(&dbUser)
-	if result.RowsAffected == 0 && id > 0 {
-		err = "User with id not exists" + string(dbUser.ID)
-		return err
-	}
+	// result = db.Where(" id = ? ", id).First(&dbUser)
+	// if result.RowsAffected == 0 && id > 0 {
+	// 	err = "User with id not exists" + string(dbUser.ID)
+	// 	return err
+	// }
 	return ""
 }
 
