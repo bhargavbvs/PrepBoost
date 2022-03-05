@@ -21,4 +21,5 @@ Deliverables ::
 4. Database migration from SQLite to MySql for multiple user access and scalability
 5. Create User session management
 6. Create bookmarks table for the user to store bookmarked questions
-7. Changed navigation bar from horizontal to vertical
+7. Changed navigation bar from horizontal to vertical.
+8. Implemented unit testing using jest.
