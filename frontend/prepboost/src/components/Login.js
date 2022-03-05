@@ -19,7 +19,7 @@ const Login = () => {
 
     const loginUser = () => {
     axios
-      .post("http://eaa0-2600-8807-c0c4-300-f9c0-f9c4-b44-dda3.ngrok.io/users/login/", {
+      .post("http://localhost:9010/users/login/", {
         Username: username,
         Password: password,
       }, {
