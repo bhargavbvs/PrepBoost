@@ -26,3 +26,4 @@ Deliverables ::
 9. Added login and signup pages for user to login and signup.
 10. Installed axios to integrate front end with backend.
 11. Integrated frontend with backend for login page component to fetch user details from backend.
+12. Added bookmarks page where user can see the questions he/she bookmarked to visit later.
