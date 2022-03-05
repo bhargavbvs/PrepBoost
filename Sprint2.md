@@ -4,7 +4,7 @@
 
 Link to the video presentation for Sprint 2
 
-Frontend : 
+Frontend : https://github.com/bhargavbvs/PrepBoost/blob/main/video1069825702.mp4
 </br>Backend :  
 
 Deliverables :: 
