@@ -23,3 +23,4 @@ Deliverables ::
 6. Create bookmarks table for the user to store bookmarked questions
 7. Changed navigation bar from horizontal to vertical.
 8. Implemented unit testing using jest.
+9. Added login and signup pages for user to login and signup.
