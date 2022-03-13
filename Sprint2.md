@@ -7,6 +7,14 @@ Link to the video presentation for Sprint 2
 Frontend : https://github.com/bhargavbvs/PrepBoost/blob/main/video1069825702.mp4
 </br>Backend :  
 
+FRONTEND DEVELOPMENT
+Features completed in Sprint1:
+1. Integration with SQLite and GORM along with the Mux router for handlers.
+2. React-router-dom to create user interface framework.
+3. Home API - localhost:9000/home
+4. Login API - localhost:9000/login
+5. 
+
 Deliverables :: 
 
 1. Users should be able to get the questions along with the answers they marked of that specific year and topic.
