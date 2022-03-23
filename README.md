@@ -38,8 +38,8 @@ React, Golang, SQLite, Elasticsearch
 
 # Team Members :
 
-| Name  | Github ID | 
-| ------------- | ------------- |
+| Name  | Github ID | Role
+| ------------- | ------------- | ---------------
 | Chaitanya Kumar Sagili  | CHAITANYA1120508 | Working on backend
 | Anudeep Reddy Banda | anudeepreddy36 | Working on frontend
 | Sri Sai Anathula | srisai1234 | Working on frontend
