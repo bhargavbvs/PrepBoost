@@ -24,7 +24,6 @@ Features completed in Sprint1:
 2. React-router-dom to create user interface framework.
 3. Home API - localhost:9000/home
 4. Login API - localhost:9000/login
-5. 
 
 Deliverables :: 
 
@@ -32,6 +31,12 @@ Deliverables ::
 2. Users can also bookmark questions and get them so they can reattempt those questions multiple times.
 3. JWT authentication has been and the user session has been set for upto 24 hours.
 4. 10 years Questions data is collected and are categorized according to the specific topic and subtopic. 
+
+
+## 4. Unit Test Cases for the Backend APIs
+
+> `go test -v`
+
 
 # What we accomplished 
 1. Functions
