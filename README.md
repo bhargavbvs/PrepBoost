@@ -40,7 +40,7 @@ React, Golang, SQLite, Elasticsearch
 
 | Name  | Github ID | 
 | ------------- | ------------- |
-| Chaitanya Kumar Sagili  | CHAITANYA1120508 |
-| Anudeep Reddy Banda | anudeepreddy36 |
-| Sri Sai Anathula | srisai1234 |
-| Venkata Sai Bhargav Bathini  | bhargavbvs |
+| Chaitanya Kumar Sagili  | CHAITANYA1120508 | Working on backend
+| Anudeep Reddy Banda | anudeepreddy36 | Working on frontend
+| Sri Sai Anathula | srisai1234 | Working on frontend
+| Venkata Sai Bhargav Bathini  | bhargavbvs | Working on backend
