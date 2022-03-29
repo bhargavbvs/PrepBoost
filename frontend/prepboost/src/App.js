@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Years from './components/pages/Years';
 import Topics from './components/pages/Topics';
 import TopicQuestions from './components/pages/TopicQuestions';
+import YearQuestions from './components/pages/YearQuestions';
 import Login from './components/Login';
 import Signup from './components/SignUp';
 
@@ -23,6 +24,7 @@ function App() {
           <Route path='/years' component={Years} />
           <Route path='/topics' component={Topics} />
           <Route path='/topicquestions' component={TopicQuestions} />
+          <Route path='/yearquestions' component={YearQuestions} />
         </Switch>
       </Router>
     </div>
