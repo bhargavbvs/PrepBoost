@@ -12,17 +12,17 @@ function YearCards() {
             <CardItem
               src='images/img_2021.png'
               text='2021'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2020.png'
               text='2020'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2019.png'
               text='2019'
-              path='/topicquestions'
+              path='/yearquestions'
             />
           </ul>
           
@@ -30,21 +30,21 @@ function YearCards() {
             <CardItem
               src='images/img_2018.png'
               text='2018'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2017.png'
               text='2017'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2016.png'
               text='2016'
-              path='/topicquestions'
+              path='/yearquestions'
             /><CardItem
               src='images/img_2015.png'
               text='2015'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             </ul>
             
@@ -52,22 +52,22 @@ function YearCards() {
             <CardItem
               src='images/img_2014.png'
               text='2014'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2013.png'
               text='2013'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2012.png'
               text='2012'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             <CardItem
               src='images/img_2011.png'
               text='2011'
-              path='/topicquestions'
+              path='/yearquestions'
             />
             </ul>
         </div>
