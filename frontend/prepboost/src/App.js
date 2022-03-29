@@ -13,9 +13,9 @@ import Signup from './components/SignUp';
 function App() {
   return (
     <div className='sidebar' id = "container">
-    <Sidebar />
+    <Navbar />
     {/* <Login /> */}
-      {/* <Router>
+       <Router>
         <Switch>
           <Route path='/' exact component={Login} />
           <Route path='/home' exact component={Home} />
@@ -24,7 +24,7 @@ function App() {
           <Route path='/topics' component={Topics} />
           <Route path='/topicquestions' component={TopicQuestions} />
         </Switch>
-      </Router> */}
+      </Router>
     </div>
   );
 }
