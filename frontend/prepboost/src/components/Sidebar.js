@@ -7,6 +7,7 @@ import TopicQuestions from '../components/pages/TopicQuestions';
 import Login from '../components/Login';
 import Signup from '../components/SignUp';
 import Bookmarks from '../components/pages/Bookmarks';
+import YearQuestions from '../components/pages/YearQuestions';
 
 import {
   BrowserRouter as Router,
@@ -99,6 +100,9 @@ function App() {
           </Route>
           <Route exact path="/topicquestions">
             <TopicQuestions/>
+          </Route>
+          <Route exact path="/yearquestions">
+            <YearQuestions/>
           </Route>
           <Route exact path="/login">
             <Login/>
