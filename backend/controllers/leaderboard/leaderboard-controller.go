@@ -4,17 +4,12 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
-	"strconv"
 
-	"github.com/gorilla/mux"
 	"prepboost.com/web/models"
 )
 
 func LeaderboardAlltime(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	year := vars["year"]
-	YEAR, err := strconv.ParseInt(year, 0, 0)
-	questions := models.GetQuestionsByYear(YEAR)
+	leadersAlltime := models.GetOverallLeaderboard()
 	if err != nil {
 		fmt.Println("error while parsing questions year")
 	}
@@ -30,10 +25,7 @@ func LeaderboardAlltime(w http.ResponseWriter, r *http.Request) {
 }
 
 func LeaderboardDaily(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	year := vars["year"]
-	YEAR, err := strconv.ParseInt(year, 0, 0)
-	questions := models.GetQuestionsByYear(YEAR)
+	leaderboardDaily := models.GetQuestionsByYear(YEAR)
 	if err != nil {
 		fmt.Println("error while parsing questions year")
 	}
