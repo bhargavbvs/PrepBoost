@@ -50,7 +50,7 @@ func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
 	w.Write(body)
 }
 
-//Report question
+//Report question if it is incorrect
 func ReportQuestion(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	userId := vars["userId"]

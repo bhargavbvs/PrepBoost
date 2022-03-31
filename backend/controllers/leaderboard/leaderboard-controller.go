@@ -10,11 +10,8 @@ import (
 
 func LeaderboardAlltime(w http.ResponseWriter, r *http.Request) {
 	leadersAlltime := models.GetOverallLeaderboard()
-	if err != nil {
-		fmt.Println("error while parsing questions year")
-	}
 
-	body, err := json.Marshal(questions)
+	body, err := json.Marshal(leadersAlltime)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -25,12 +22,9 @@ func LeaderboardAlltime(w http.ResponseWriter, r *http.Request) {
 }
 
 func LeaderboardDaily(w http.ResponseWriter, r *http.Request) {
-	leaderboardDaily := models.GetQuestionsByYear(YEAR)
-	if err != nil {
-		fmt.Println("error while parsing questions year")
-	}
+	leaderboardDaily := models.GetDailyLeaderboard()
 
-	body, err := json.Marshal(questions)
+	body, err := json.Marshal(leaderboardDaily)
 	if err != nil {
 		fmt.Println(err)
 		return

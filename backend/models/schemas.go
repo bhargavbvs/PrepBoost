@@ -1,6 +1,7 @@
 package models
 
 import (
+	"fmt"
 	"time"
 
 	"github.com/jinzhu/gorm"
@@ -10,6 +11,7 @@ import (
 var DB *gorm.DB
 
 func Init() {
+	fmt.Print("database connection ......")
 	DB = config.DatabaseConnection()
 
 	DB.AutoMigrate(&User{}, &Exams{}, &Questions{})
