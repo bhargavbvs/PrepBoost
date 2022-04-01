@@ -6,6 +6,7 @@
 }
 
 .home,
+.contact,
 .bookmarks {
   display: flex;
   height: 90vh;
