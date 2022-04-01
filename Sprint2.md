@@ -35,6 +35,9 @@ Deliverables ::
 
 ## 4. Unit Test Cases for the Backend APIs
 
+Unit test cases are written in the specific controller folders.
+Go to the specific folder and run the test cases using the command below.
+
 > `go test -v`
 
 
