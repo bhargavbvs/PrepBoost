@@ -8,6 +8,7 @@ import Login from '../components/Login';
 import Signup from '../components/SignUp';
 import Bookmarks from '../components/pages/Bookmarks';
 import YearQuestions from '../components/pages/YearQuestions';
+import Contact from '../components/pages/contact';
 
 import {
   BrowserRouter as Router,
@@ -86,6 +87,14 @@ function App() {
                 <ListItemText primary={"Bookmarks"} />
               </ListItem>
             </Link>
+            <Link to="/contact" className={classes.link}>
+              <ListItem button>
+                <ListItemIcon>
+                  <BookmarksIcon />
+                </ListItemIcon>
+                <ListItemText primary={"Contact"} />
+              </ListItem>
+            </Link>
           </List>
         </Drawer>
         <Switch>
@@ -112,6 +121,9 @@ function App() {
           </Route>
           <Route exact path="/bookmarks">
             <Bookmarks/>
+          </Route>
+          <Route exact path="/contact">
+            <Contact/>
           </Route>
         </Switch>
       </div>
