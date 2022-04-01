@@ -1,8 +1,7 @@
 package main
 
 import (
-	"log"
-
+	models "prepboost.com/web/models"
 	"prepboost.com/web/routes"
 
 	"fmt"
@@ -17,12 +16,17 @@ func main() {
 
 	router := mux.NewRouter()
 
+	// Establishing Database Connection
+	models.Init()
+
 	routes.RegisterUserRoutes(router)
 	routes.RegisterQuestionsRoutes(router)
 	routes.RegisterBookmarkRoutes(router)
+	routes.RegisterLeaderboardRoutes(router)
 	http.Handle("/", router)
-	log.Fatal(http.ListenAndServe("localhost:9010", router))
-
+	fmt.Println("Starting server....")
+	// log.Fatal(http.ListenAndServe("localhost:9010", router))
+	http.ListenAndServe(":9010", router)
 	fmt.Println("Watching on port: 9010")
 	// http.ListenAndServe(":8080", router)
 
