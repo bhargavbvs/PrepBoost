@@ -12,4 +12,10 @@ describe("renders the home page", () => {
            cy.findAllByText("Miscellaneous").click();
            cy.url().should("include", "topicquestions");
          });
+
+      it("routes to a correct pages", () => {
+        cy.visit("/topics");
+          cy.findAllByText("Economy").click();
+          cy.url().should("include", "economyquestions");
+        });
 });
