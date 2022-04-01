@@ -2,7 +2,7 @@ import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
-function componentDidMount(topicname) {
+function GetQuestions(topicname) {
   // Simple POST request with a JSON body using fetch
   const requestOptions = {
       method: 'POST',
