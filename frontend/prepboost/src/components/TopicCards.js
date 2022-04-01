@@ -2,6 +2,18 @@ import React from 'react';
 import './Cards.css';
 import CardItem from './CardItem';
 
+function componentDidMount(topicname) {
+  // Simple POST request with a JSON body using fetch
+  const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ title: topicname })
+  };
+  fetch('https://reqres.in/api/posts/questionsbytopic', requestOptions)
+      .then(response => response.json())
+      .then(data => this.setState({ postId: data.id }));
+}
+
 function TopicCards() {
   return (
     <div className='cards'>
