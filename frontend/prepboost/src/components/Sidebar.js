@@ -10,6 +10,7 @@ import Signup from '../components/SignUp';
 import Bookmarks from '../components/pages/Bookmarks';
 import YearQuestions from '../components/pages/YearQuestions';
 import Contact from '../components/pages/contact';
+import Agriculturequestions from '../components/pages/Agriculturequestions';
 
 import {
   BrowserRouter as Router,
@@ -113,6 +114,9 @@ function App() {
           </Route>
           <Route exact path="/economyquestions">
             <EconomyQuestions/>
+          </Route>
+          <Route exact path="/agriculturequestions">
+            <Agriculturequestions/>
           </Route>
           <Route exact path="/yearquestions">
             <YearQuestions/>

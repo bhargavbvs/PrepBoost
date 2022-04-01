@@ -29,7 +29,7 @@ function TopicCards() {
             <CardItem
               src='images/agri_min.png'
               text='Agriculture'
-              path='/topicquestions'
+              path='/agriculturequestions'
             />
             <CardItem
               src='images/env_min.png'
