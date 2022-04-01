@@ -12,7 +12,7 @@ function TopicCards() {
             <CardItem
               src='images/eco_min.png'
               text='Economy'
-              path='/topicquestions'
+              path='/economyquestions'
             />
             <CardItem
               src='images/agri_min.png'

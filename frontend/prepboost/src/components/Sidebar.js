@@ -4,6 +4,7 @@ import Years from '../components/pages/Years';
 import Home from '../components/pages/Home';
 import Topics from '../components/pages/Topics';
 import TopicQuestions from '../components/pages/TopicQuestions';
+import EconomyQuestions from '../components/pages/Economyquestions';
 import Login from '../components/Login';
 import Signup from '../components/SignUp';
 import Bookmarks from '../components/pages/Bookmarks';
@@ -109,6 +110,9 @@ function App() {
           </Route>
           <Route exact path="/topicquestions">
             <TopicQuestions/>
+          </Route>
+          <Route exact path="/economyquestions">
+            <EconomyQuestions/>
           </Route>
           <Route exact path="/yearquestions">
             <YearQuestions/>
