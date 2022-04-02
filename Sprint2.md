@@ -2,7 +2,7 @@
 
 # Frontend server
 To run the Froentend Server run the given command below :
->`ng serve`
+>`npm start`
 
 # Backend server
 > `cd ../backend`
