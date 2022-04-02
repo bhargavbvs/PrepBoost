@@ -44,7 +44,6 @@ func TestAlltimeLeaderboard(t *testing.T) {
 	}
 }
 
-
 //Test-2
 //All time Leaderboard test cases for the users
 func TestDailyLeaderboard(t *testing.T) {
@@ -56,7 +55,7 @@ func TestDailyLeaderboard(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	handler := http.HandlerFunc(GetDailyLeaderboard)
+	handler := http.HandlerFunc(LeaderboardDaily)
 	rr := httptest.NewRecorder()
 
 	handler.ServeHTTP(rr, req)
