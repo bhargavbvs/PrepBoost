@@ -52,10 +52,11 @@ func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
 
 //Report question if it is incorrect
 func ReportQuestion(w http.ResponseWriter, r *http.Request) {
+
 	vars := mux.Vars(r)
-	userId := vars["userId"]
-	usID, err := strconv.ParseInt(userId, 0, 0)
-	questions := models.GetTopicwiseQuestions(usID)
+	questionId := vars["questionId"]
+	qID, err := strconv.ParseInt(questionId, 0, 0)
+	questions := models.GetTopicwiseQuestions(qID)
 	if err != nil {
 		fmt.Println("error while parsing questions year")
 	}

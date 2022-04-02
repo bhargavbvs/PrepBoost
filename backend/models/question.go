@@ -33,6 +33,11 @@ type TopicwiseQuestions struct {
 	Source      string `gorm:"null"`
 }
 
+type ReportQuestionStruct struct {
+	QId    uint `gorm:"not null"`
+	UserId uint `gorm:"not null"`
+}
+
 func GetQuestionsByYear(Year int64) []Questions {
 	var que []Questions
 
@@ -89,4 +94,10 @@ func GetBookmarkedQuestions(userId int64) []Questions {
 	DB.Raw(topicQuery, userId, 1).Find(&bookmarks)
 	DB.LogMode(true)
 	return bookmarks
+}
+
+func (u *ReportQuestionStruct) ReportQuestion() *ReportQuestionStruct {
+	DB.NewRecord(u)
+	DB.Create(&u)
+	return u
 }
