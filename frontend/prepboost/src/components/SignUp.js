@@ -20,7 +20,7 @@ const Signup = () => {
         let item ={Username,Email,Mobile,Password,Paid,Search_left,Session_id}
         console.warn(item)
 
-        let result = await fetch("http://localhost:8000/api/register",{
+        let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/users/signup/",{
             method: 'POST',
             body:JSON.stringify(item),
             headers:{
