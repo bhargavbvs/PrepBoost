@@ -73,3 +73,28 @@ func Test_Login(t *testing.T) {
 	fmt.Print("here token")
 
 }
+
+func Test_Signup(t *testing.T) {
+	models.Init()
+
+	samplePerson := models.User{Username: "bhargav bffvs", Password: "mypass", Mobile: "+3528767089",
+		Email: "bhargav@gmail.com", Paid: 0, Search_left: 100, Session_id: "sdfdsfsdfdsf"}
+	bytePerson, _ := json.Marshal(samplePerson)
+
+	req, err := http.NewRequest("POST", "/signup", bytes.NewReader(bytePerson))
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	rr := httptest.NewRecorder()
+	handler := http.HandlerFunc(LoginUser)
+	handler.ServeHTTP(rr, req)
+	if status := rr.Code; status != http.StatusOK {
+		t.Errorf("handler returned wrong status code : got %v want %v\n", status, http.StatusOK)
+	}
+
+	req.Header.Set("Token", samplePerson.Token)
+	fmt.Print(samplePerson.Token)
+	fmt.Print("here token")
+
+}
