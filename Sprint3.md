@@ -33,4 +33,8 @@ Features completed in Sprint3:
 Test Cases for frontend using cypress for different pages.
 1. Added test cases for homepage, loginpage, topicspage, yearspage.
 2. Added test cases for checking redirecting to different page.
+![image](https://user-images.githubusercontent.com/37535240/161361733-6a9f0eb5-9cf7-4b71-beb2-aff36e7fc4fc.png)
+![image](https://user-images.githubusercontent.com/37535240/161361754-ede23862-db88-486b-b78b-5fbe316fa293.png)
+![image](https://user-images.githubusercontent.com/37535240/161361765-5c8562dd-5b9b-4554-b922-1cbfbe781492.png)
+![image](https://user-images.githubusercontent.com/37535240/161361788-4dd2b49b-ca99-4b3c-aef5-75aa39fa15f5.png)
 
