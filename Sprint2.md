@@ -63,6 +63,7 @@ Unit test case results for the backend APIs :
 <img width="1420" alt="Screen Shot 2022-04-01 at 11 54 29 PM" src="https://user-images.githubusercontent.com/17181838/161365240-91bcc4b4-09c9-4e25-a324-55ff0bd263ae.png">
 
 7. Database migration from SQLite to MySql for multiple user access and scalability
+<img width="1531" alt="Screen Shot 2022-04-01 at 11 58 18 PM" src="https://user-images.githubusercontent.com/17181838/161365365-8451ba66-c214-4e3e-bf79-144ea2684413.png">
 
 
 # What we accomplished 
