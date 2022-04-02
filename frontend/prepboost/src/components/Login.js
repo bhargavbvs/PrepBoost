@@ -11,39 +11,28 @@ import {
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import axios from "axios";
 
-function GetUserDetails(username) {
-  // Simple POST request with a JSON body using fetch
-  const requestOptions = {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ title: username })
-  };
-  fetch('https://reqres.in/api/posts/userdetails', requestOptions)
-      .then(response => response.json())
-      .then(data => this.setState({ postId: data.id }));
-}
 
 const Login = () => {
-    const [username, setUserName] = useState("");
-    const [password, setPassword] = useState("")
+  const [Username,setName] = useState("")
+  const [Password,setPassword] = useState("")
 
-    const loginUser = () => {
-    axios
-      .post("http://localhost:9010/users/login/", {
-        Username: username,
-        Password: password,
-      }, {
-        "Access-Control-Allow-Origin": "*"
+  async function Login()
+  {
+      let item ={Username,Password}
+      console.warn(item)
+
+      let result = await fetch("http://localhost:8000/api/login",{
+          method: 'POST',
+          body:JSON.stringify(item),
+          headers:{
+              "Content-Type": 'appliaction/json',
+              "Accept": 'application/json'
+          }
       })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+      result = await result.json()
+      console.warn("result", result)
+  }
 
   const paperStyle = {
     padding: 20,
@@ -67,7 +56,7 @@ const Login = () => {
           placeholder="Enter username"
           fullWidth
           required
-          onChange={(e) => {setUserName(e.target.value)}}
+          onChange={(e) => {setName(e.target.value)}}
         />
         <TextField
           label="Password"
@@ -87,7 +76,7 @@ const Login = () => {
           variant="contained"
           style={btnstyle}
           fullWidth
-          onClick={loginUser}
+          onClick={Login}
         >
           Sign in
         </Button>
