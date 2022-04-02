@@ -58,6 +58,8 @@ func LoginUser(w http.ResponseWriter, r *http.Request) {
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, claims)
 	tokenString, err := token.SignedString(jwtKey)
 
+	loginUser.Token = tokenString
+
 	if err != nil {
 		w.WriteHeader(http.StatusInternalServerError)
 		return
