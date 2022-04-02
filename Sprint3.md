@@ -13,7 +13,8 @@ First the localhost:4200 will start upon ng serve and then a new tab for cypress
 
 # Sprint 3
 
-Features completed in Sprint3:
+Features completed in Sprint3 for FRONTEND:
+
 1. React-router-dom to create user interface framework.
 2. Home API - localhost:3000/home
 3. Login API - localhost:3000/login
@@ -37,4 +38,21 @@ Test Cases for frontend using cypress for different pages.
 ![image](https://user-images.githubusercontent.com/37535240/161361754-ede23862-db88-486b-b78b-5fbe316fa293.png)
 ![image](https://user-images.githubusercontent.com/37535240/161361765-5c8562dd-5b9b-4554-b922-1cbfbe781492.png)
 ![image](https://user-images.githubusercontent.com/37535240/161361788-4dd2b49b-ca99-4b3c-aef5-75aa39fa15f5.png)
+
+
+Features completed in Sprint3 for BACKEND:
+
+1. Added the Leaderbaord API end points for Daily Leaderboards and All time Leaderboards.
+<img width="1123" alt="Screen Shot 2022-04-01 at 10 38 00 PM" src="https://user-images.githubusercontent.com/17181838/161362563-084a399b-b37a-4e84-9956-1b1ecda0e032.png">
+
+2. Added the Unit Test case for All time Leaderboard : Test Result :: Passed. 
+<img width="1265" alt="Screen Shot 2022-04-01 at 8 47 06 PM" src="https://user-images.githubusercontent.com/17181838/161362632-d417e047-ccff-4531-b361-b8e8f84854ed.png">
+
+3. Added Unit Test case for Daily Leaderboard : Test Result :: Passed. 
+
+
+
+
+
+
 
