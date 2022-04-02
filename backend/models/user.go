@@ -19,6 +19,7 @@ type User struct {
 	Session_id  string     `gorm:"not null;unique"`
 	Created_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
 	Updated_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
+	Token       string     `gorm:"null"`
 }
 
 type LoginUser struct {
