@@ -3,6 +3,7 @@
 # Frontend server
 To run the Froentend Server run the given command below :
 >`cd /frontend/prepboost/`
+
 >`npm start`
 
 # Backend server
