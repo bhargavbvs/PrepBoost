@@ -42,6 +42,17 @@ Go to the specific folder and run the test cases using the command below.
 
 > `go test -v`
 
+Unit test case results for the backend APIs :
+
+1. Unit test case for Fetch user endpoint : PASSED
+<img width="1275" alt="Screen Shot 2022-04-01 at 8 51 08 PM" src="https://user-images.githubusercontent.com/17181838/161362775-34fa1032-4b1a-4f09-9a73-a63b40d83ec2.png">
+
+2. Unit test case for Login of the User : PASSED
+<img width="1262" alt="Screen Shot 2022-04-01 at 8 48 09 PM" src="https://user-images.githubusercontent.com/17181838/161362818-ac7e9e3d-d61d-4d3f-9f0e-9dd0a949977e.png">
+
+
+3. Unit test case for updating the 
+
 
 # What we accomplished 
 1. Functions
