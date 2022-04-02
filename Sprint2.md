@@ -18,7 +18,7 @@ First the localhost:4200 will start upon ng serve and then a new tab for cypress
 Link to the video presentation for Sprint 2
 
 Frontend : https://github.com/bhargavbvs/PrepBoost/blob/main/video1069825702.mp4
-</br>Backend :  
+</br>Backend :  Added the screenshots below.
 
 FRONTEND DEVELOPMENT
 Features completed in Sprint1:
@@ -52,6 +52,17 @@ Unit test case results for the backend APIs :
 
 
 3. Unit test case for updating the 
+
+4. Added the Bookmarks API so that user can get the questions bookmarked. 
+<img width="1408" alt="Screen Shot 2022-04-01 at 11 46 45 PM" src="https://user-images.githubusercontent.com/17181838/161365060-2421d831-85e6-411a-b7a3-5d6e8c7c1004.png">
+
+5. Added the API to get questions yearwise.
+<img width="1417" alt="Screen Shot 2022-04-01 at 11 51 24 PM" src="https://user-images.githubusercontent.com/17181838/161365135-7273aa2e-d970-4419-bd58-13df7f01aa64.png">
+
+6. Added the API to get topicwise questions. 
+<img width="1420" alt="Screen Shot 2022-04-01 at 11 54 29 PM" src="https://user-images.githubusercontent.com/17181838/161365240-91bcc4b4-09c9-4e25-a324-55ff0bd263ae.png">
+
+7. Database migration from SQLite to MySql for multiple user access and scalability
 
 
 # What we accomplished 
