@@ -1,6 +1,26 @@
 import React, { useState } from 'react';
 
-export default function TopicQuestions() {
+export default function TopicQuestions(props) {
+
+	const Topicname = props.data
+
+	async function Login()
+	{
+		let item ={Topicname}
+		console.warn(item)
+
+		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/topic/",{
+			method: 'POST',
+			body:JSON.stringify(item),
+			headers:{
+				"Content-Type": 'application/json',
+				"Accept": 'application/json'
+			}
+		})
+		result = await result.json()
+		console.warn("result", result)
+	}
+
 	const questions = [
 		{
 			questionText: 'What is the capital of France?',
