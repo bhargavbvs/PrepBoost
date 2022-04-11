@@ -23,18 +23,22 @@
   width: 3000vh;
 }
 
+
 .topicquestions {
   background-color: #12b2d66f;
-  width: 450px;
-  min-height: 200px;
+  width: 1350px;
+  min-height: 800px;
   height: min-content;
   border-radius: 35px;
-  padding: 20px;
+  padding: 100px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
+  background-image: url('D:/SE Project/PrepBoost/frontend/prepboost/src/components/images/topics.jpg');
+  background-repeat: no-repeat;
+  background-size: 1300px 1800px;
 }
 
 .score-section {
@@ -44,7 +48,7 @@
 }
 
 .question-section {
-  width: 100%;
+  width: 80%;
   position: relative;
 }
 
@@ -66,7 +70,7 @@
   flex-direction: column;
   min-height: 100px;
   justify-content: space-between;
-  margin-left: auto;
+  margin-left: 0px;
   margin-right: auto;
 }
 

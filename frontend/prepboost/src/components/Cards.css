@@ -1,6 +1,9 @@
 .cards {
   padding: 4rem;
   background: #fff;
+  background-image: url('D:/SE Project/PrepBoost/frontend/prepboost/src/components/images/topics.jpg');
+  background-repeat: no-repeat;
+  background-size: 1300px 1800px;
 }
 
 h1 {
