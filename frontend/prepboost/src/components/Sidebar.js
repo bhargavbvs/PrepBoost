@@ -113,7 +113,7 @@ function App() {
             <TopicQuestions/>
           </Route>
           <Route exact path="/economyquestions">
-            <EconomyQuestions/>
+            <TopicQuestions data="economy"/>
           </Route>
           <Route exact path="/agriculturequestions">
             <Agriculturequestions/>
