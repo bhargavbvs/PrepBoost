@@ -7,6 +7,6 @@ import (
 
 var RegisterQuestionsRoutes = func(router *mux.Router) {
 	router.HandleFunc("/questions/{year}", controllers_que.GetYearwiseQuestions).Methods("GET")
-	router.HandleFunc("/questions/{userId}", controllers_que.GetTopicwiseQuestions).Methods("GET")
+	router.HandleFunc("/topicwise/{userId}", controllers_que.GetTopicwiseQuestions).Methods("GET")
 	router.HandleFunc("/questions/report", controllers_que.ReportQuestion).Methods("POST")
 }
