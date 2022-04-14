@@ -26,7 +26,7 @@ const Login = () => {
           method: 'POST',
           body:JSON.stringify(item),
           headers:{
-              "Content-Type": 'appliaction/json',
+              "Content-Type": 'application/json',
               "Accept": 'application/json'
           }
       })
