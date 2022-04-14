@@ -109,14 +109,59 @@ function App() {
           <Route exact path="/topics">
             <Topics/>
           </Route>
-          <Route exact path="/topicquestions">
-            <TopicQuestions/>
-          </Route>
           <Route exact path="/economyquestions">
             <TopicQuestions data="economy"/>
           </Route>
           <Route exact path="/agriculturequestions">
-            <Agriculturequestions/>
+            <TopicQuestions data="agriculture"/>
+          </Route>
+          <Route exact path="/environmentquestions">
+            <TopicQuestions data="environment"/>
+          </Route>
+          <Route exact path="/politicsquestions">
+            <TopicQuestions data="politics"/>
+          </Route>
+          <Route exact path="/irquestions">
+            <TopicQuestions data="ir"/>
+          </Route>
+          <Route exact path="/sciencequestions">
+          <TopicQuestions data="science"/>
+          </Route>
+          <Route exact path="/modernquestions">
+          <TopicQuestions data="modern"/>
+          </Route>
+          <Route exact path="/ancientquestions">
+          <TopicQuestions data="ancient"/>
+          </Route>
+          <Route exact path="/medivalquestions">
+          <TopicQuestions data="medival"/>
+          </Route>
+          <Route exact path="/culturequestions">
+          <TopicQuestions data="culture"/>
+          </Route>
+          <Route exact path="/indiangeoquestions">
+          <TopicQuestions data="indiangeo"/>
+          </Route>
+          <Route exact path="/worldgeoquestions">
+          <TopicQuestions data="worldgeo"/>
+          </Route>
+          <Route exact path="/mappingquestions">
+          <TopicQuestions data="mapping"/>
+          </Route>
+          <Route exact path="/currentquestions">
+          <TopicQuestions data="current"/>
+          </Route>
+          <Route exact path="/reportsquestions">
+          <TopicQuestions data="reports"/>
+          </Route>
+          <Route exact path="/schemesquestions">
+          <TopicQuestions data="schemes"/>
+          </Route>
+          <Route exact path="/postindependencequestions">
+          <TopicQuestions data="postindependence"/>
+          </Route>
+          <Route exact path="/miscellaneousquestions">
+          <TopicQuestions data="miscellaneous"/>
           </Route>
           <Route exact path="/yearquestions">
             <YearQuestions/>
