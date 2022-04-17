@@ -255,3 +255,23 @@ func GetUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write(body)
 }
+
+func ResetUser(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	userId := vars["userId"]
+	ID, err := strconv.ParseInt(userId, 0, 0)
+	if err != nil {
+		fmt.Println("error while parsing")
+	}
+
+	userDetails, _ := models.GetUserById(ID)
+	body, err := json.Marshal(userDetails)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
+}
