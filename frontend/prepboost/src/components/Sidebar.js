@@ -163,8 +163,38 @@ function App() {
           <Route exact path="/miscellaneousquestions">
           <TopicQuestions data="miscellaneous"/>
           </Route>
-          <Route exact path="/yearquestions">
-            <YearQuestions/>
+          <Route exact path="/2021questions">
+            <YearQuestions data="2021"/>
+          </Route>
+          <Route exact path="/2020questions">
+            <YearQuestions data="2020"/>
+          </Route>
+          <Route exact path="/2019questions">
+            <YearQuestions data="2019"/>
+          </Route>
+          <Route exact path="/2018questions">
+            <YearQuestions data="2018"/>
+          </Route>
+          <Route exact path="/2017questions">
+            <YearQuestions data="2017"/>
+          </Route>
+          <Route exact path="/2016questions">
+            <YearQuestions data="2016"/>
+          </Route>
+          <Route exact path="/2015questions">
+            <YearQuestions data="2015"/>
+          </Route>
+          <Route exact path="/2014questions">
+            <YearQuestions data="2014"/>
+          </Route>
+          <Route exact path="/2013questions">
+            <YearQuestions data="2013"/>
+          </Route>
+          <Route exact path="/2012questions">
+            <YearQuestions data="2012"/>
+          </Route>
+          <Route exact path="/2011questions">
+            <YearQuestions data="2011"/>
           </Route>
           <Route exact path="/login">
             <Login/>
