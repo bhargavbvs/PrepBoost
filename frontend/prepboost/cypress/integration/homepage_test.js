@@ -14,5 +14,10 @@ describe("renders the home page", () => {
            cy.url().should("include", "years");
            cy.findAllByText("Topic wise Questions").click();
            cy.url().should("include", "topics");
+           cy.findAllByText("Contact").click();
+           cy.url().should("include", "contact");
+           cy.contains("issues").should("exist");
+           cy.findAllByText("Bookmarks").click();
+           cy.url().should("include", "bookmarks");
          });
 });

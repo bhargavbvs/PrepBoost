@@ -29,7 +29,7 @@ export default function TopicQuestions(props) {
 		const loadquestions = async () => {
 			let item = { topicid,subtopicid }
 			console.warn("details", item)
-			let result = await fetch(`http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/topicwise/${topicid}?${subtopicid}`,{
+			let result = await fetch(`http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/topicwise/${topicid}/${subtopicid}`,{
 				method: 'GET',
 				headers: {
 					"Content-Type": 'application/json',

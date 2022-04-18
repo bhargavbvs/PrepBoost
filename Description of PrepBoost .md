@@ -8,3 +8,26 @@ Students can Report(!) a question if there is any error or if the answer is inco
 The student will get chance to provide a feedback for the test interface and the experience of the platform after completion.
 The PrepBoost is a student centric web application igniting the competitive spirits through Persuasion model of Recognition and thriving the young brains with multidimensinal questions to get 360 degree view of topics.
 “Education is not the answer to the question. Education is the means to the answer to all questions.”
+
+Link to API Documentation : https://github.com/bhargavbvs/PrepBoost/wiki/Backend-Documentation
+
+Link to Project Board : https://github.com/bhargavbvs/PrepBoost/projects
+
+Link to Sprint 4 Deliverables : https://github.com/bhargavbvs/PrepBoost/blob/main/Sprint4.md
+
+Link to Demo video functionality : https://github.com/bhargavbvs/PrepBoost/blob/main/final%20demostration%20video.mp4
+
+Link to Cypress test video : https://github.com/bhargavbvs/PrepBoost/blob/main/cypress%20test%20video.mp4
+
+Link to Backend unit test video : 
+
+Link to functionality guide : https://github.com/bhargavbvs/PrepBoost/blob/main/FunctionalityGuide.md
+
+# Team Members :
+
+| Name  | Github ID | Role
+| ------------- | ------------- | ---------------
+| Chaitanya Kumar Sagili  | CHAITANYA1120508 | Working on backend
+| Anudeep Reddy Banda | anudeepreddy36 | Working on frontend
+| Sri Sai Anathula | srisai1234 | Working on frontend
+| Venkata Sai Bhargav Bathini  | bhargavbvs | Working on backend

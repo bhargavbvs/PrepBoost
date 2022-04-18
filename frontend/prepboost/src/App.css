@@ -17,18 +17,27 @@
   background-color: hwb(0 65% 35% / 0.008);
 }
 
+
+.nobookmarks {
+  display: flex;
+  height: 90vh;
+  width: 184.4vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  background-color: hwb(0 65% 35% / 0.008);
+}
+
 .login,
 .signup,
 .years,
 .topics{
   width: 3000vh;
   height: 100vh;
-  background-color: #12b2d66f;
 }
 
 
 .topicquestions {
-  background-color: #12b2d66f;
   width: 1350px;
   min-height: 800px;
   height: min-content;
@@ -47,8 +56,7 @@
   display: flex;
   font-size: 24px;
   align-items: center;
-  height: 200vh;
-  width: 30vh;
+  width: 40vh;
 }
 
 .score {
