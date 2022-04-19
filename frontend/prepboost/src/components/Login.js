@@ -17,6 +17,16 @@ const Login = () => {
   const [Username,setName] = useState("")
   const [Password,setPassword] = useState("")
 
+
+  const paperStyle = {
+    padding: 20,
+    height: "70vh",
+    width: 300,
+    margin: "20px auto",
+  };
+  const avatarStyle = { backgroundColor: "#1bbd7e" };
+  const btnstyle = { margin: "8px 0" };
+  
   async function Login()
   {
       let item ={Username,Password}
@@ -33,15 +43,6 @@ const Login = () => {
       result = await result.json()
       console.warn("result", result)
   }
-
-  const paperStyle = {
-    padding: 20,
-    height: "70vh",
-    width: 300,
-    margin: "20px auto",
-  };
-  const avatarStyle = { backgroundColor: "#1bbd7e" };
-  const btnstyle = { margin: "8px 0" };
   return (
     <Grid className="login">
       <Paper elevation={10} style={paperStyle}>

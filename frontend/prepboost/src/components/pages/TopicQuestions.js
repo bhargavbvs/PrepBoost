@@ -4,22 +4,19 @@ export default function TopicQuestions(props) {
 
 	const Topicname = props.data
 
-	async function Login()
-	{
-		let item ={Topicname}
-		console.warn(item)
+	
+	const handleAnswerOptionClick = (isCorrect) => {
+		if (isCorrect) {
+			setScore(score + 1);
+		}
 
-		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/topic/",{
-			method: 'POST',
-			body:JSON.stringify(item),
-			headers:{
-				"Content-Type": 'application/json',
-				"Accept": 'application/json'
-			}
-		})
-		result = await result.json()
-		console.warn("result", result)
-	}
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < questions.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowScore(true);
+		}
+	};
 
 	const questions = [
 		{
@@ -64,18 +61,22 @@ export default function TopicQuestions(props) {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	const handleAnswerOptionClick = (isCorrect) => {
-		if (isCorrect) {
-			setScore(score + 1);
-		}
+	async function Login()
+	{
+		let item ={Topicname}
+		console.warn(item)
 
-		const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
-			setCurrentQuestion(nextQuestion);
-		} else {
-			setShowScore(true);
-		}
-	};
+		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/topic/",{
+			method: 'POST',
+			body:JSON.stringify(item),
+			headers:{
+				"Content-Type": 'application/json',
+				"Accept": 'application/json'
+			}
+		})
+		result = await result.json()
+		console.warn("result", result)
+	}
 	return (
 		<div className='topicquestions'>
 			{showScore ? (

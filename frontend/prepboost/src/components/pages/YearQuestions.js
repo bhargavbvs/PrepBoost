@@ -1,6 +1,21 @@
 import React, { useState } from 'react';
 
 export default function YearQuestions() {
+	
+	const handleAnswerOptionClick = (isCorrect) => {
+		if (isCorrect) {
+			setScore(score + 1);
+		}
+
+		const nextQuestion = currentQuestion + 1;
+		if (nextQuestion < questions.length) {
+			setCurrentQuestion(nextQuestion);
+		} else {
+			setShowScore(true);
+		}
+	};
+
+	
 	const questions = [
 		{
 			questionText: 'What is the capital of India?',
@@ -44,18 +59,6 @@ export default function YearQuestions() {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	const handleAnswerOptionClick = (isCorrect) => {
-		if (isCorrect) {
-			setScore(score + 1);
-		}
-
-		const nextQuestion = currentQuestion + 1;
-		if (nextQuestion < questions.length) {
-			setCurrentQuestion(nextQuestion);
-		} else {
-			setShowScore(true);
-		}
-	};
 	return (
 		<div className='topicquestions'>
 			{showScore ? (

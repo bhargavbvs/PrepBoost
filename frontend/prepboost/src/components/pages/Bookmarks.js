@@ -4,23 +4,6 @@ export default function TopicQuestions(props) {
 
 	const username = props.data
 
-	async function Login()
-	{
-		let item ={username}
-		console.warn(item)
-
-		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/bookmarks/",{
-			method: 'POST',
-			body:JSON.stringify(item),
-			headers:{
-				"Content-Type": 'application/json',
-				"Accept": 'application/json'
-			}
-		})
-		result = await result.json()
-		console.warn("result", result)
-	}
-
 	const questions = [
 		{
 			questionText: 'What is the capital of France?',
@@ -63,6 +46,23 @@ export default function TopicQuestions(props) {
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
+
+	async function Login()
+	{
+		let item ={username}
+		console.warn(item)
+
+		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/bookmarks/",{
+			method: 'POST',
+			body:JSON.stringify(item),
+			headers:{
+				"Content-Type": 'application/json',
+				"Accept": 'application/json'
+			}
+		})
+		result = await result.json()
+		console.warn("result", result)
+	}
 
 	const handleAnswerOptionClick = (isCorrect) => {
 		if (isCorrect) {
