@@ -49,3 +49,18 @@ func GetDailyLeaderboard() []Leaderboard {
 	DB.LogMode(true)
 	return leaderDailyUsers
 }
+
+
+func GetDailyLeaderboardtopten() []Leaderboard {
+
+	var leaderDailyUsers []Leaderboard
+
+	var leaderboardOverallQuery = ("SELECT users.id, users.username, users.email, users.mobile, " +
+		"count(answered) as answered FROM user_answers JOIN users on " +
+		"user_answers.user_id = users.id WHERE prepboost.user_answers.created_at > SUBDATE(NOW(), 1) " +
+		"group by user_id ORDER BY answered DESC LIMIT 10")
+
+	DB.Raw(leaderboardOverallQuery).Find(&leaderDailyUsers)
+	DB.LogMode(true)
+	return leaderDailyUsers
+}
