@@ -10,7 +10,7 @@
 .bookmarks {
   display: flex;
   height: 99.8vh;
-  width: 176.3vh;
+  width: 184.4vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
@@ -22,6 +22,7 @@
 .years,
 .topics{
   width: 3000vh;
+  height: 100vh;
   background-color: #12b2d66f;
 }
 

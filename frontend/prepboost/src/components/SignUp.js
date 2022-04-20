@@ -1,11 +1,19 @@
 import React, {useState} from 'react'
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import { Link } from 'react-router-dom'
+import {
+    Grid,
+    Paper,
+    Avatar,
+    TextField,
+    Button,
+    Typography,
+    Link,
+  } from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import Welcome from '../components/pages/Welcome';
 
 const Signup = () => {
     const paperStyle = { padding: '30px 20px', width: 320, margin: "20px auto" }
-    const headerStyle = { margin: 0 }
+    const btnstyle = { margin: "8px 0" };
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const [Username,setName] = useState("")
     const [Email,setEmail] = useState("")
@@ -13,7 +21,7 @@ const Signup = () => {
     const [Password,setPassword] = useState("") 
     const Paid = 0
     const Search_left = 1
-    const Session_id = "akdhdfajdddfddsdfsddddsdffdfsafffk"
+    const Session_id = (Math.random() + 1).toString(36).substring(20);
 
     async function signUp()
     {
@@ -29,46 +37,88 @@ const Signup = () => {
             }
         })
         result = await result.json()
-        console.warn("result", result)
+        // let result = {
+        //     "ID": 10,
+        //     "Username": "bhariojiojw",
+        //     "Mobile": "+35278900990",
+        //     "Email": "bvshbsdfds@gmailcom",
+        //     "Password": "mypasios",
+        //     "Paid": 0,
+        //     "Search_left": 1,
+        //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
+        //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
+        //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
+        //     "Token": ""
+        // }
+        const values = []
+        Object.keys(result).forEach(key => values.push({name: key, value: result[key]}))
+        console.warn("values", values[1])
+
+        let id = values[0].value
+        let username = values[1].value
+        
+        return (
+            <div>
+            <Welcome id={id} username={username}/>
+            </div>
+        );
+        
     }
 
     return (
         <Grid className='signup'>
             <Paper elevation={20} style={paperStyle}>
-                <Grid align='center'>
-                    <Avatar style={avatarStyle}>
-                        <AddCircleOutlineOutlinedIcon />
-                    </Avatar>
-                    <h2 style={headerStyle}>Sign Up</h2>
-                    <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
-                </Grid>
-                <form >
-                <p>
-                    <label>Username</label><br/>
-                    <input type="text" value={Username} onChange={(e)=> setName(e.target.value)} name="first_name" required />
-                </p>
-                <p>
-                    <label>Email address</label><br/>
-                    <input type="email" value={Email} onChange={(e)=> setEmail(e.target.value)} name="email" required />
-                </p>
-                <p>
-                    <label>Phone Number</label><br/>
-                    <input type="number" value={Mobile} onChange={(e)=> setPhonenumber(e.target.value)} name="phonenumber" required />
-                </p>
-                <p>
-                    <label>Password</label><br/>
-                    <input type="password" name="password" value={Password} onChange={(e)=> setPassword(e.target.value)} required />
-                </p>
-                <p>
-                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
-                </p>
-                <p>
-                    <button id="sub_btn" onClick={signUp} type="submit">Register</button>
-                </p>
-            </form>
-            <footer>
-                <p><Link to="/login">Already have an account?</Link></p>
-            </footer>
+            <Grid align="center">
+          <Avatar style={avatarStyle}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <h2>Fill the details to Register</h2>
+        </Grid>
+        <TextField
+          label="Username"
+          placeholder="Enter username"
+          fullWidth
+          required
+          onChange={(e) => {setName(e.target.value)}}
+        />
+        <TextField
+          label="Email id"
+          placeholder="Enter email id"
+          type="email"
+          fullWidth
+          required
+          onChange={(e) => {setEmail(e.target.value)}}
+        />
+        <TextField
+          label="Phone Number"
+          placeholder="Enter phone number"
+          type="number"
+          fullWidth
+          required
+          onChange={(e) => {setPhonenumber(e.target.value)}}
+        />
+        <TextField
+          label="Password"
+          placeholder="Enter password"
+          type="password"
+          fullWidth
+          required
+          onChange={(e) => {setPassword(e.target.value)}}
+        />
+        <Button
+          type="submit"
+          color="primary"
+          variant="contained"
+          style={btnstyle}
+          fullWidth
+          onClick={signUp}
+        >
+          Register
+          </Button>
+          <Typography>
+          {" "}
+          Already have an account ?<Link href="login">Login</Link>
+        </Typography>
             </Paper>
         </Grid>
     )
