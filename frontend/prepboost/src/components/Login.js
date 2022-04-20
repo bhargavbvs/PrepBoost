@@ -11,6 +11,7 @@ import {
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
+import Welcome from '../components/pages/Welcome';
 
 
 const Login = () => {
@@ -41,7 +42,33 @@ const Login = () => {
           }
       })
       result = await result.json()
-      console.warn("result", result)
+    //   let result = {
+    //     "ID": 10,
+    //     "Username": "bhariojiojw",
+    //     "Mobile": "+35278900990",
+    //     "Email": "bvshbsdfds@gmailcom",
+    //     "Password": "mypasios",
+    //     "Paid": 0,
+    //     "Search_left": 1,
+    //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
+    //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
+    //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
+    //     "Token": "",
+    //     "Status": "Success"
+    // }
+    const values = []
+    Object.keys(result).forEach(key => values.push({name: key, value: result[key]}))
+    console.warn("values", values[1])
+    let id = values[0].value
+    let username = values[1].value
+    if(values[11].value == "Success")
+    {
+      return (
+        <div>
+        <Welcome id={id} username={username}/>
+        </div>
+      );
+    }
   }
   return (
     <Grid className="login">
