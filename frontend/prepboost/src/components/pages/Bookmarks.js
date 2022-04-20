@@ -77,29 +77,40 @@ export default function TopicQuestions(props) {
 			setShowScore(true);
 		}
 	};
-	return (
-		<div className='topicquestions'>
-			{showScore ? (
-				<div className='score-section'>
-					You scored {score} out of {questions.length}
-				</div>
-			) : (
-				<>
-					<div className='question-section'>
-						<div className='question-count'>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
+	if(userid === 'null')
+	{
+		return (
+			<div>    
+			  <h1 className='home'>Login to see your bookmark questions</h1>
+			</div>
+		  );
+	}
+	else
+  	{
+		return (
+			<div className='topicquestions'>
+				{showScore ? (
+					<div className='score-section'>
+						You scored {score} out of {questions.length}
+					</div>
+				) : (
+					<>
+						<div className='question-section'>
+							<div className='question-count'>
+								<span>Question {currentQuestion + 1}</span>/{questions.length}
+							</div>
+							<div className='question-text'>{questions[currentQuestion].questionText} </div>
+						
+						<br/>
+						<div className='answer-section'>
+							{questions[currentQuestion].answerOptions.map((answerOption) => (
+								<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
+							))}
 						</div>
-						<div className='question-text'>{questions[currentQuestion].questionText} </div>
-					
-					<br/>
-					<div className='answer-section'>
-						{questions[currentQuestion].answerOptions.map((answerOption) => (
-							<button onClick={() => handleAnswerOptionClick(answerOption.isCorrect)}>{answerOption.answerText}</button>
-						))}
-					</div>
-					</div>
-				</>
-			)}
-		</div>
-	);
+						</div>
+					</>
+				)}
+			</div>
+		);
+	}
 }
