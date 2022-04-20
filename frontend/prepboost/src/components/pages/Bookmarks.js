@@ -12,24 +12,31 @@ export default function TopicQuestions(props) {
 	const userid = localStorage.getItem('userid')
 
 	useEffect(() => {
-		const loadquestions = async () => {
-			let item = { userid }
-			console.warn("details", item)
-
-			let result = await fetch(`http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/bookmarks/${userid}`,{
-				method: 'GET',
-				headers: {
-					"Content-Type": 'application/json',
-					"Accept": 'application/json'
-				}
-			})
-			result = await result.json()
-			console.warn("result", result)
-			setQuestions(result)
+		if(userid === 'null')
+		{
 
 		}
-
-		loadquestions();
+		else
+		{
+			const loadquestions = async () => {
+				let item = { userid }
+				console.warn("details", item)
+	
+				let result = await fetch(`http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/bookmarks/${userid}`,{
+					method: 'GET',
+					headers: {
+						"Content-Type": 'application/json',
+						"Accept": 'application/json'
+					}
+				})
+				result = await result.json()
+				console.warn("result", result)
+				setQuestions(result)
+	
+			}
+			loadquestions();
+		}
+		
 	}, []);
 
 	const handleAnswerOptionClick = (Answer,Option) => {
@@ -50,6 +57,14 @@ export default function TopicQuestions(props) {
 		return (
 			<div>    
 			  <h1 className='home'>Login to see your bookmark questions</h1>
+			</div>
+		  );
+	}
+	else if(question.length === 0)
+	{
+		return (
+			<div>    
+			  <h1 className='home'>No bookmarks yet</h1>
 			</div>
 		  );
 	}
