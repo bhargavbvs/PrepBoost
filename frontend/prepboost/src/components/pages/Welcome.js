@@ -7,8 +7,8 @@ import {
 const Welcome = () => {
   
     const history = useHistory();
-    const id = history.location.state.id;
-    const username = history.location.state.username;
+    const id = localStorage.getItem('userid');
+    const username = localStorage.getItem('username');
     console.log(id,username)
     
   

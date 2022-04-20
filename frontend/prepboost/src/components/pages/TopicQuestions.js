@@ -61,7 +61,7 @@ export default function TopicQuestions(props) {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 
-	async function Login()
+	async function TopicQuestions()
 	{
 		let item ={Topicname}
 		console.warn(item)

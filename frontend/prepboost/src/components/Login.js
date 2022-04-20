@@ -34,9 +34,9 @@ const Login = () => {
   async function Login()
   {
       let item ={Username,Password}
-      console.warn(item)
+      console.warn("details",item)
 
-      let response = await fetch("http://localhost:9010/users/login/",{
+      let response = await fetch("http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/users/login/",{
           method: 'POST',
           body:JSON.stringify(item),
           headers:{
@@ -47,77 +47,104 @@ const Login = () => {
       if(response.status === 200)
       {
         response = await response.json()
-        //   let result = {
-        //     "ID": 10,
-        //     "Username": "bhariojiojw",
-        //     "Mobile": "+35278900990",
-        //     "Email": "bvshbsdfds@gmailcom",
-        //     "Password": "mypasios",
-        //     "Paid": 0,
-        //     "Search_left": 1,
-        //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
-        //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
-        //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
-        //     "Token": "",
-        //     "Status": "Success"
-        // }
         const values = []
         Object.keys(response).forEach(key => values.push({name: key, value: response[key]}))
         console.warn("values", values[1])
         let id = values[0].value
         let username = values[1].value
+        localStorage.setItem('userid', id);
+        localStorage.setItem('username', username);
         history.push("/welcome", {id: {id}, username: {username}});
       }
       
   }
-  return (
-    <Grid className="login">
-      <Paper elevation={10} style={paperStyle}>
-        <Grid align="center">
-          <Avatar style={avatarStyle}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <h2>Sign In</h2>
-        </Grid>
-        <TextField
-          label="Username"
-          placeholder="Enter username"
-          fullWidth
-          required
-          onChange={(e) => {setName(e.target.value)}}
-        />
-        <TextField
-          label="Password"
-          placeholder="Enter password"
-          type="password"
-          fullWidth
-          required
-          onChange={(e) => {setPassword(e.target.value)}}
-        />
-        <FormControlLabel
-          control={<Checkbox name="checkedB" color="primary" />}
-          label="Remember me"
-        />
-        <Button
-          type="submit"
-          color="primary"
-          variant="contained"
-          style={btnstyle}
-          fullWidth
-          onClick={Login}
-        >
-          Sign in
-        </Button>
-        <Typography>
-          <Link href="#">Forgot password ?</Link>
-        </Typography>
-        <Typography>
-          {" "}
-          Do you have an account ?<Link href="signup">Sign Up</Link>
-        </Typography>
-      </Paper>
-    </Grid>
-  );
+  function Logout()
+  {
+    localStorage.setItem('userid', null);
+    localStorage.setItem('username', null);
+    history.push("/");
+  }
+  let userid = localStorage.getItem('userid')
+  if(userid === 'null')
+  {
+    console.log("null",userid)
+    return (
+      <Grid className="login">
+        <Paper elevation={10} style={paperStyle}>
+          <Grid align="center">
+            <Avatar style={avatarStyle}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <h2>Sign In</h2>
+          </Grid>
+          <TextField
+            label="Username"
+            placeholder="Enter username"
+            fullWidth
+            required
+            onChange={(e) => {setName(e.target.value)}}
+          />
+          <TextField
+            label="Password"
+            placeholder="Enter password"
+            type="password"
+            fullWidth
+            required
+            onChange={(e) => {setPassword(e.target.value)}}
+          />
+          <FormControlLabel
+            control={<Checkbox name="checkedB" color="primary" />}
+            label="Remember me"
+          />
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            style={btnstyle}
+            fullWidth
+            onClick={Login}
+          >
+            Sign in
+          </Button>
+          <Typography>
+            <Link href="#">Forgot password ?</Link>
+          </Typography>
+          <Typography>
+            {" "}
+            Do you have an account ?<Link href="signup">Sign Up</Link>
+          </Typography>
+        </Paper>
+      </Grid>
+    );
+  }
+  else
+  {
+    console.log("notnull",userid)
+    return (
+      <Grid className="login">
+        <Paper elevation={10} style={paperStyle}>
+          <Grid align="center">
+            <Avatar style={avatarStyle}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <h2>Logout</h2>
+          </Grid>
+          
+          <Button
+            type="submit"
+            color="primary"
+            variant="contained"
+            style={btnstyle}
+            fullWidth
+            onClick={Logout}
+          >
+            Logout
+          </Button>
+          
+        </Paper>
+      </Grid>
+    );
+  }
 };
 
 export default Login;
