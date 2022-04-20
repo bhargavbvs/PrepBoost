@@ -14,7 +14,7 @@ const Welcome = () => {
   
     return (
       <div>    
-        <h1 className='home'>Hello  <br/>Welcome to PREPBOOST. <br/> Let's Solve!!</h1>
+        <h1 className='home'>Hello {username} <br/>Welcome to PREPBOOST. <br/> Let's Solve!!</h1>
       </div>
     );
   }
