@@ -66,7 +66,7 @@ export default function TopicQuestions(props) {
 		let item ={Topicname}
 		console.warn(item)
 
-		let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/questions/topic/",{
+		let result = await fetch("http://localhost:9010/questions/topic/",{
 			method: 'POST',
 			body:JSON.stringify(item),
 			headers:{

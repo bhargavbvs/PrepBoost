@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from "@material-ui/core/styles"
 import Years from '../components/pages/Years';
 import Home from '../components/pages/Home';
+import Welcome from '../components/pages/Welcome';
 import Topics from '../components/pages/Topics';
 import TopicQuestions from '../components/pages/TopicQuestions';
 import EconomyQuestions from '../components/pages/Economyquestions';
@@ -103,6 +104,9 @@ function App() {
         { <Route exact path="/">
             <Home/>
           </Route> }
+          <Route exact path="/welcome">
+            <Welcome/>
+          </Route>
           <Route exact path="/years">
             <Years/>
           </Route>
