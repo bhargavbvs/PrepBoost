@@ -8,15 +8,18 @@ import {
   Typography,
   Link,
 } from "@material-ui/core";
+import {
+  useHistory
+} from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
-import Welcome from '../components/pages/Welcome';
 
 
 const Login = () => {
   const [Username,setName] = useState("")
   const [Password,setPassword] = useState("")
+  const history = useHistory();
 
 
   const paperStyle = {
@@ -33,7 +36,7 @@ const Login = () => {
       let item ={Username,Password}
       console.warn(item)
 
-      let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/users/login/",{
+      let response = await fetch("http://localhost:9010/users/login/",{
           method: 'POST',
           body:JSON.stringify(item),
           headers:{
@@ -41,34 +44,31 @@ const Login = () => {
               "Accept": 'application/json'
           }
       })
-      result = await result.json()
-    //   let result = {
-    //     "ID": 10,
-    //     "Username": "bhariojiojw",
-    //     "Mobile": "+35278900990",
-    //     "Email": "bvshbsdfds@gmailcom",
-    //     "Password": "mypasios",
-    //     "Paid": 0,
-    //     "Search_left": 1,
-    //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
-    //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
-    //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
-    //     "Token": "",
-    //     "Status": "Success"
-    // }
-    const values = []
-    Object.keys(result).forEach(key => values.push({name: key, value: result[key]}))
-    console.warn("values", values[1])
-    let id = values[0].value
-    let username = values[1].value
-    if(values[11].value == "Success")
-    {
-      return (
-        <div>
-        <Welcome id={id} username={username}/>
-        </div>
-      );
-    }
+      if(response.status === 200)
+      {
+        response = await response.json()
+        //   let result = {
+        //     "ID": 10,
+        //     "Username": "bhariojiojw",
+        //     "Mobile": "+35278900990",
+        //     "Email": "bvshbsdfds@gmailcom",
+        //     "Password": "mypasios",
+        //     "Paid": 0,
+        //     "Search_left": 1,
+        //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
+        //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
+        //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
+        //     "Token": "",
+        //     "Status": "Success"
+        // }
+        const values = []
+        Object.keys(response).forEach(key => values.push({name: key, value: response[key]}))
+        console.warn("values", values[1])
+        let id = values[0].value
+        let username = values[1].value
+        history.push("/welcome", {id: {id}, username: {username}});
+      }
+      
   }
   return (
     <Grid className="login">
