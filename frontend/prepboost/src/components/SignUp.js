@@ -31,11 +31,7 @@ const Signup = () => {
         let item ={Username,Email,Mobile,Password,Paid,Search_left,Session_id}
         console.warn(item)
 
-<<<<<<< Updated upstream
         let response = await fetch("http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/users/signup/",{
-=======
-        let result = await fetch("http://localhost:9010/users/signup/",{
->>>>>>> Stashed changes
             method: 'POST',
             body:JSON.stringify(item),
             headers:{
