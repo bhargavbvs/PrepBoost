@@ -1,10 +1,20 @@
 import React, {useState} from 'react'
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-import { Link } from 'react-router-dom'
+import {
+    Grid,
+    Paper,
+    Avatar,
+    TextField,
+    Button,
+    Typography,
+    Link,
+  } from "@material-ui/core";
+import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 
 const Signup = () => {
     const paperStyle = { padding: '30px 20px', width: 320, margin: "20px auto" }
+    const btnstyle = { margin: "8px 0" };
     const headerStyle = { margin: 0 }
     const avatarStyle = { backgroundColor: '#1bbd7e' }
     const [Username,setName] = useState("")
@@ -35,40 +45,57 @@ const Signup = () => {
     return (
         <Grid className='signup'>
             <Paper elevation={20} style={paperStyle}>
-                <Grid align='center'>
-                    <Avatar style={avatarStyle}>
-                        <AddCircleOutlineOutlinedIcon />
-                    </Avatar>
-                    <h2 style={headerStyle}>Sign Up</h2>
-                    <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
-                </Grid>
-                <form >
-                <p>
-                    <label>Username</label><br/>
-                    <input type="text" value={Username} onChange={(e)=> setName(e.target.value)} name="first_name" required />
-                </p>
-                <p>
-                    <label>Email address</label><br/>
-                    <input type="email" value={Email} onChange={(e)=> setEmail(e.target.value)} name="email" required />
-                </p>
-                <p>
-                    <label>Phone Number</label><br/>
-                    <input type="number" value={Mobile} onChange={(e)=> setPhonenumber(e.target.value)} name="phonenumber" required />
-                </p>
-                <p>
-                    <label>Password</label><br/>
-                    <input type="password" name="password" value={Password} onChange={(e)=> setPassword(e.target.value)} required />
-                </p>
-                <p>
-                    <input type="checkbox" name="checkbox" id="checkbox" required /> <span>I agree all statements in <a href="https://google.com" target="_blank" rel="noopener noreferrer">terms of service</a></span>.
-                </p>
-                <p>
-                    <button id="sub_btn" onClick={signUp} type="submit">Register</button>
-                </p>
-            </form>
-            <footer>
-                <p><Link to="/login">Already have an account?</Link></p>
-            </footer>
+            <Grid align="center">
+          <Avatar style={avatarStyle}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <h2>Fill the details to Register</h2>
+        </Grid>
+        <TextField
+          label="Username"
+          placeholder="Enter username"
+          fullWidth
+          required
+          onChange={(e) => {setName(e.target.value)}}
+        />
+        <TextField
+          label="Email id"
+          placeholder="Enter email id"
+          type="email"
+          fullWidth
+          required
+          onChange={(e) => {setEmail(e.target.value)}}
+        />
+        <TextField
+          label="Phone Number"
+          placeholder="Enter phone number"
+          type="number"
+          fullWidth
+          required
+          onChange={(e) => {setPhonenumber(e.target.value)}}
+        />
+        <TextField
+          label="Password"
+          placeholder="Enter password"
+          type="password"
+          fullWidth
+          required
+          onChange={(e) => {setPassword(e.target.value)}}
+        />
+        <Button
+          type="submit"
+          color="primary"
+          variant="contained"
+          style={btnstyle}
+          fullWidth
+          onClick={signUp}
+        >
+          Register
+          </Button>
+          <Typography>
+          {" "}
+          Already have an account ?<Link href="login">Login</Link>
+        </Typography>
             </Paper>
         </Grid>
     )
