@@ -31,7 +31,7 @@ const Signup = () => {
         let item ={Username,Email,Mobile,Password,Paid,Search_left,Session_id}
         console.warn(item)
 
-        let response = await fetch("http://localhost:9010/users/signup/",{
+        let response = await fetch("http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/users/signup/",{
             method: 'POST',
             body:JSON.stringify(item),
             headers:{
@@ -40,29 +40,17 @@ const Signup = () => {
             }
         })
         if(response.status === 200)
-        {
-          response = await response.json()
-          //   let result = {
-          //     "ID": 10,
-          //     "Username": "bhariojiojw",
-          //     "Mobile": "+35278900990",
-          //     "Email": "bvshbsdfds@gmailcom",
-          //     "Password": "mypasios",
-          //     "Paid": 0,
-          //     "Search_left": 1,
-          //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
-          //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
-          //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
-          //     "Token": "",
-          //     "Status": "Success"
-          // }
-          const values = []
-          Object.keys(response).forEach(key => values.push({name: key, value: response[key]}))
-          console.warn("values", values[1])
-          let id = values[0].value
-          let username = values[1].value
-          history.push("/welcome", {id: {id}, username: {username}});
-        }
+      {
+        response = await response.json()
+        const values = []
+        Object.keys(response).forEach(key => values.push({name: key, value: response[key]}))
+        console.warn("values", values[1])
+        let id = values[0].value
+        let username = values[1].value
+        localStorage.setItem('userid', id);
+        localStorage.setItem('username', username);
+        history.push("/welcome", {id: {id}, username: {username}});
+      }
         
     }
 

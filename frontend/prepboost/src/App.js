@@ -12,6 +12,8 @@ import Login from './components/Login';
 import Signup from './components/SignUp';
 
 function App() {
+  localStorage.setItem('userid', null);
+  localStorage.setItem('username', null);
   return (
     <div className='sidebar' id = "container">
     {/* <Navbar /> */}
