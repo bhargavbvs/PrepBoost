@@ -114,58 +114,58 @@ function App() {
             <Topics/>
           </Route>
           <Route exact path="/economyquestions">
-            <TopicQuestions data="economy"/>
+            <TopicQuestions topicid="1" subtopicid ="1"/>
           </Route>
           <Route exact path="/agriculturequestions">
-            <TopicQuestions data="agriculture"/>
+            <TopicQuestions topicid="2" subtopicid ="112"/>
           </Route>
           <Route exact path="/environmentquestions">
-            <TopicQuestions data="environment"/>
+            <TopicQuestions topicid="3" subtopicid ="21"/>
           </Route>
           <Route exact path="/politicsquestions">
-            <TopicQuestions data="politics"/>
+            <TopicQuestions topicid="4" subtopicid ="30"/>
           </Route>
           <Route exact path="/irquestions">
-            <TopicQuestions data="ir"/>
+            <TopicQuestions topicid="5" subtopicid ="113"/>
           </Route>
           <Route exact path="/sciencequestions">
-          <TopicQuestions data="science"/>
+          <TopicQuestions topicid="7" subtopicid ="44"/>
           </Route>
           <Route exact path="/modernquestions">
-          <TopicQuestions data="modern"/>
+          <TopicQuestions topicid="8" subtopicid ="53"/>
           </Route>
           <Route exact path="/ancientquestions">
-          <TopicQuestions data="ancient"/>
+          <TopicQuestions topicid="9" subtopicid ="68"/>
           </Route>
           <Route exact path="/medivalquestions">
-          <TopicQuestions data="medival"/>
+          <TopicQuestions topicid="10" subtopicid ="74"/>
           </Route>
           <Route exact path="/culturequestions">
-          <TopicQuestions data="culture"/>
+          <TopicQuestions topicid="11" subtopicid ="78"/>
           </Route>
           <Route exact path="/indiangeoquestions">
-          <TopicQuestions data="indiangeo"/>
+          <TopicQuestions topicid="12" subtopicid ="89"/>
           </Route>
           <Route exact path="/worldgeoquestions">
-          <TopicQuestions data="worldgeo"/>
+          <TopicQuestions topicid="13" subtopicid ="97"/>
           </Route>
           <Route exact path="/mappingquestions">
-          <TopicQuestions data="mapping"/>
+          <TopicQuestions topicid="14" subtopicid ="103"/>
           </Route>
           <Route exact path="/currentquestions">
-          <TopicQuestions data="current"/>
+          <TopicQuestions topicid="15" subtopicid ="115"/>
           </Route>
           <Route exact path="/reportsquestions">
-          <TopicQuestions data="reports"/>
+          <TopicQuestions topicid="16" subtopicid ="116"/>
           </Route>
           <Route exact path="/schemesquestions">
-          <TopicQuestions data="schemes"/>
+          <TopicQuestions topicid="17" subtopicid ="117"/>
           </Route>
           <Route exact path="/postindependencequestions">
-          <TopicQuestions data="postindependence"/>
+          <TopicQuestions topicid="18" subtopicid ="118"/>
           </Route>
           <Route exact path="/miscellaneousquestions">
-          <TopicQuestions data="miscellaneous"/>
+          <TopicQuestions topicid="19" subtopicid ="119"/>
           </Route>
           <Route exact path="/2021questions">
             <YearQuestions data="2021"/>

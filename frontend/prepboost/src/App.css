@@ -39,7 +39,6 @@
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
-  background-image: url('D:/SE Project/PrepBoost/frontend/prepboost/src/components/images/topics.jpg');
   background-repeat: no-repeat;
   background-size: 1300px 1800px;
 }
@@ -48,6 +47,16 @@
   display: flex;
   font-size: 24px;
   align-items: center;
+  height: 200vh;
+  width: 30vh;
+}
+
+.score {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  height: 10vh;
+  width: 80vh;
 }
 
 .question-section {
