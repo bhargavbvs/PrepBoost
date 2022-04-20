@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   font-size: 3rem;
-  background-color: #17f7876f;
+  background-color: hwb(0 65% 35% / 0.008);
 }
 
 .login,
