@@ -33,9 +33,11 @@ func GetYearwiseQuestions(w http.ResponseWriter, r *http.Request) {
 //Get questions based on the respective topic
 func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	userId := vars["userId"]
-	usID, err := strconv.ParseInt(userId, 0, 0)
-	questions := models.GetTopicwiseQuestions(usID)
+	topicId := vars["topicId"]
+	subtopicId := vars["subtopicId"]
+	tID, err := strconv.ParseInt(topicId, 0, 0)
+	stID, err := strconv.ParseInt(subtopicId, 0, 0)
+	questions := models.GetTopicwiseQuestions(tID, stID)
 	if err != nil {
 		fmt.Println("error while parsing questions year")
 	}
@@ -53,22 +55,22 @@ func GetTopicwiseQuestions(w http.ResponseWriter, r *http.Request) {
 //Report question if it is incorrect
 func ReportQuestion(w http.ResponseWriter, r *http.Request) {
 
-	vars := mux.Vars(r)
-	questionId := vars["questionId"]
-	qID, err := strconv.ParseInt(questionId, 0, 0)
-	questions := models.GetTopicwiseQuestions(qID)
-	if err != nil {
-		fmt.Println("error while parsing questions year")
-	}
+	// vars := mux.Vars(r)
+	// questionId := vars["questionId"]
+	// qID, err := strconv.ParseInt(questionId, 0, 0)
+	// // questions := models.GetTopicwiseQuestions(qID, )
+	// if err != nil {
+	// 	fmt.Println("error while parsing questions year")
+	// }
 
-	body, err := json.Marshal(questions)
-	if err != nil {
-		fmt.Println(err)
-		return
-	}
-	w.Header().Set("Content-Type", "application/json")
-	w.WriteHeader(http.StatusOK)
-	w.Write(body)
+	// body, err := json.Marshal(questions)
+	// if err != nil {
+	// 	fmt.Println(err)
+	// 	return
+	// }
+	// w.Header().Set("Content-Type", "application/json")
+	// w.WriteHeader(http.StatusOK)
+	// w.Write(body)
 }
 
 //Get questions bookmarked by the user according to the respective exam

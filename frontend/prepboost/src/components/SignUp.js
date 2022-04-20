@@ -8,8 +8,10 @@ import {
     Typography,
     Link,
   } from "@material-ui/core";
+  import {
+    useHistory
+  } from "react-router-dom";
 import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
-import Welcome from '../components/pages/Welcome';
 
 const Signup = () => {
     const paperStyle = { padding: '30px 20px', width: 320, margin: "20px auto" }
@@ -22,13 +24,18 @@ const Signup = () => {
     const Paid = 0
     const Search_left = 1
     const Session_id = (Math.random() + 1).toString(36).substring(20);
+    const history = useHistory();
 
     async function signUp()
     {
         let item ={Username,Email,Mobile,Password,Paid,Search_left,Session_id}
         console.warn(item)
 
-        let result = await fetch("http://711d-2600-8807-c0c4-300-e1dc-68bf-67dc-b13.ngrok.io/users/signup/",{
+<<<<<<< Updated upstream
+        let response = await fetch("http://6f49-2600-8807-c0c0-d400-cc94-a9ef-a41-1466.ngrok.io/users/signup/",{
+=======
+        let result = await fetch("http://localhost:9010/users/signup/",{
+>>>>>>> Stashed changes
             method: 'POST',
             body:JSON.stringify(item),
             headers:{
@@ -36,32 +43,18 @@ const Signup = () => {
                 "Accept": 'application/json'
             }
         })
-        result = await result.json()
-        // let result = {
-        //     "ID": 10,
-        //     "Username": "bhariojiojw",
-        //     "Mobile": "+35278900990",
-        //     "Email": "bvshbsdfds@gmailcom",
-        //     "Password": "mypasios",
-        //     "Paid": 0,
-        //     "Search_left": 1,
-        //     "Session_id": "akdhdfadsdfsddddsdffdfsafffk",
-        //     "Created_at": "2022-04-19T21:42:52.532898-04:00",
-        //     "Updated_at": "2022-04-19T21:42:52.532898-04:00",
-        //     "Token": ""
-        // }
+        if(response.status === 200)
+      {
+        response = await response.json()
         const values = []
-        Object.keys(result).forEach(key => values.push({name: key, value: result[key]}))
+        Object.keys(response).forEach(key => values.push({name: key, value: response[key]}))
         console.warn("values", values[1])
-
         let id = values[0].value
         let username = values[1].value
-        
-        return (
-            <div>
-            <Welcome id={id} username={username}/>
-            </div>
-        );
+        localStorage.setItem('userid', id);
+        localStorage.setItem('username', username);
+        history.push("/welcome", {id: {id}, username: {username}});
+      }
         
     }
 
