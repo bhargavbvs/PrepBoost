@@ -8,6 +8,7 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+//To find any error in Database
 func checkErr(err error, sucess_message string) {
 	if err != nil {
 		fmt.Println(err)
@@ -16,6 +17,7 @@ func checkErr(err error, sucess_message string) {
 	}
 }
 
+//Db connection establishment through GORM,GORM officially supports databases MySQL
 func DatabaseConnection() *gorm.DB {
 	db, err := gorm.Open("mysql", "root:prepboost#123@tcp(prepboost-prod.cppktldlc6tz.ap-south-1.rds.amazonaws.com:3306)/prepboost")
 	fmt.Println(err)
