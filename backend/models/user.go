@@ -9,17 +9,17 @@ import (
 )
 
 type User struct {
-	ID          uint       `gorm:"primaryKey;autoIncrement"`
-	Username    string     `gorm:"not null"`
-	Mobile      string     `gorm:"not null;unique"`
-	Email       string     `gorm:"null"`
-	Password    string     `gorm:"not null"`
-	Paid        int        `gorm:"not null;default:0"`
-	Search_left int        `gorm:"not null;default:100"`
-	Session_id  string     `gorm:"not null;unique"`
-	Created_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
-	Updated_at  *time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
-	Token       string     `gorm:"null"`
+	ID          uint      `gorm:"primaryKey;autoIncrement"`
+	Username    string    `gorm:"not null"`
+	Mobile      string    `gorm:"not null;unique"`
+	Email       string    `gorm:"null"`
+	Password    string    `gorm:"not null"`
+	Paid        int       `gorm:"not null;default:0"`
+	Search_left int       `gorm:"not null;default:100"`
+	Session_id  string    `gorm:"not null;unique"`
+	Created_at  time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
+	Updated_at  time.Time `gorm:"type:DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP" faker:"-"`
+	Token       string    `gorm:"null"`
 }
 
 type LoginUser struct {
@@ -60,7 +60,6 @@ func GetUserById(Id int64) (*User, *gorm.DB) {
 
 func GetUserFromUserId(Id uint) (*User, *gorm.DB) {
 	var user User
-	fmt.Println("git here ived", Id)
 	DB.Where("ID=?", Id).Find(&user)
 	return &user, DB
 }
