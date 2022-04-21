@@ -45,9 +45,22 @@ func UserPasswordCheck(loginUser LoginUser) string {
 	return user.Password
 }
 
+func FindUserId(loginUser LoginUser) uint {
+	var user User
+	DB.Where("username=?", loginUser.Username).Find(&user)
+	return user.ID
+}
+
 func GetUserById(Id int64) (*User, *gorm.DB) {
 	var user User
 	fmt.Println("testing request received", Id)
+	DB.Where("ID=?", Id).Find(&user)
+	return &user, DB
+}
+
+func GetUserFromUserId(Id uint) (*User, *gorm.DB) {
+	var user User
+	fmt.Println("git here ived", Id)
 	DB.Where("ID=?", Id).Find(&user)
 	return &user, DB
 }
