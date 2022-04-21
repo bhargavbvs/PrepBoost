@@ -73,6 +73,8 @@ func Test_Login(t *testing.T) {
 	fmt.Print("here token")
 }
 
+// Test - 3
+//To test the signup of the user
 func Test_Signup(t *testing.T) {
 	models.Init()
 
@@ -95,7 +97,7 @@ func Test_Signup(t *testing.T) {
 }
 
 // Test - 4
-//To test the Login details of the user
+//To test the Update user details of the user
 func Test_UpdateUser(t *testing.T) {
 	models.Init()
 

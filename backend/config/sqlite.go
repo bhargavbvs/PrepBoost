@@ -17,9 +17,9 @@ func checkErr(err error, sucess_message string) {
 }
 
 func DatabaseConnection() *gorm.DB {
-	db, err := gorm.Open("mysql", "root:prepboost#123@tcp(prepboost-prod.cppktldlc6tz.ap-south-1.rds.amazonaws.com:3306)/prepboost")
+	db, err := gorm.Open("mysql", "root:prepboost#123@tcp(prepboost-prod.cppktldlc6tz.ap-south-1.rds.amazonaws.com:3306)/prepboost?parseTime=true")
 	fmt.Println(err)
-	checkErr(err, "Database error")
+	checkErr(err, "Connected to AWS DB successfully")
 
 	// DBMigrate(db)
 	return db
