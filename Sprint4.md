@@ -78,12 +78,11 @@ Link to script_for_db_update : https://github.com/bhargavbvs/PrepBoost/blob/main
 
 
 
+https://user-images.githubusercontent.com/17181838/164367047-d8b4ed6e-df44-4934-b6de-c924a9d1e252.mp4
 
 
 
 
 
-
-https://user-images.githubusercontent.com/17181838/164365336-5c74913c-e7af-4e7c-af6a-528e74ce51e8.mov
 
 
