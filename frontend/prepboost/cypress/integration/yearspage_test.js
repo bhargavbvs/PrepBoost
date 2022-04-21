@@ -10,6 +10,6 @@ describe("renders the home page", () => {
 
       it("routes to a correct pages", () => {
            cy.findAllByText("2021").click();
-           cy.url().should("include", "topicquestions");
+           cy.url().should("include", "2021questions");
          });
 });
