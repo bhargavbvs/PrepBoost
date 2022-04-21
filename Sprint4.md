@@ -72,9 +72,23 @@ Link to script_for_db_update : https://github.com/bhargavbvs/PrepBoost/blob/main
 ![Screenshot (35)]![image](https://user-images.githubusercontent.com/93815375/164361886-29a521ca-2b95-4c6e-afe5-b4c7d1594208.png)
 
 7. Worked on writing Unit test cases for LeaderBoard
-8. Worked on writing Unit test cases for Yearwise questions
+<img width="1182" alt="Screen Shot 2022-04-20 at 11 46 21 PM" src="https://user-images.githubusercontent.com/17181838/164368018-3244315b-9daf-436d-b9fc-bdade8686205.png">
+<img width="1181" alt="Screen Shot 2022-04-20 at 11 46 34 PM" src="https://user-images.githubusercontent.com/17181838/164368054-feccb250-7e07-4a1f-9205-751f6ec0433d.png">
+
+8. Worked on writing Unit test cases for Bookmarked questions
+<img width="1176" alt="Screen Shot 2022-04-20 at 11 47 30 PM" src="https://user-images.githubusercontent.com/17181838/164368165-bb7fc50a-e3e9-4787-869d-0c3ed3c5c359.png">
+
 9. Worked on writing Unit test cases for topic wise questions 
-10. Worked on writing Unit test cases for bookmark questions
+<img width="1185" alt="Screen Shot 2022-04-20 at 11 47 53 PM" src="https://user-images.githubusercontent.com/17181838/164368207-add64fa3-1b96-4d85-9bd6-1d0aa984b02c.png">
+
+10. Worked on writing Unit test cases for Yearwise questions
+<img width="1176" alt="Screen Shot 2022-04-20 at 11 48 39 PM" src="https://user-images.githubusercontent.com/17181838/164368287-46657fe8-8630-4b8e-8742-70bcc09ec77e.png">
+
+11. Unit test cases for the User updates
+<img width="1166" alt="Screen Shot 2022-04-20 at 11 49 49 PM" src="https://user-images.githubusercontent.com/17181838/164368390-14d666c1-2447-4527-95eb-73a06be806f1.png">
+
+12. Unit test cases fot the User signup
+<img width="1195" alt="Screen Shot 2022-04-20 at 11 50 17 PM" src="https://user-images.githubusercontent.com/17181838/164368443-1d4ec5b3-df9b-4ab4-8668-ff18d6fc536f.png">
 
 
 
