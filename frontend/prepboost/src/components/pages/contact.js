@@ -8,7 +8,7 @@ class  Contact extends  React.Component{
   render(){
     return (
       <div>    
-        <h1 className='contact'>To contact for any issues . <br/> 352XXXXX99</h1>
+        <h1 className='contact'>To contact for any issues . <br/> 3527458899</h1>
       </div>
     );
   }

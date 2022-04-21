@@ -42,12 +42,12 @@ func GetQuestionsByYear(Year int64) []Questions {
 	var que []Questions
 
 	//Query to fetch the questions of that specific year and exam
-	var queQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
-		"topics.topic, subtopics.subtopic, questions.answer, questions.option1, questions.option2," +
-		"questions.option3, questions.option4, questions.explanation, questions.learning," +
-		"questions.source FROM questions INNER JOIN topics ON questions.topic_id = topics.id " +
-		"INNER JOIN subtopics ON questions.subtopic1_id = subtopics.id " +
-		"INNER JOIN exams ON questions.exam_id = exams.id " +
+	var queQuery = ("SELECT pre_questions.id, exams.exam, exams.type, pre_questions.year, pre_questions.question, " +
+		"topics.topic, subtopics.subtopic, pre_questions.answer, pre_questions.option1, pre_questions.option2," +
+		"pre_questions.option3, pre_questions.option4, pre_questions.explanation, pre_questions.learning," +
+		"pre_questions.source FROM pre_questions INNER JOIN topics ON pre_questions.topic_id = topics.id " +
+		"INNER JOIN subtopics ON pre_questions.subtopic1_id = subtopics.id " +
+		"INNER JOIN exams ON pre_questions.exam_id = exams.id " +
 		"WHERE exam_id = ?  and year = ? ORDER BY id")
 
 	DB.Raw(queQuery, 1, Year).Find(&que)
@@ -56,22 +56,22 @@ func GetQuestionsByYear(Year int64) []Questions {
 }
 
 //Get questions based on the specific topic that user wants
-func GetTopicwiseQuestions(userId int64) []TopicwiseQuestions {
+func GetTopicwiseQuestions(topicId int64, subtopicId int64) []TopicwiseQuestions {
 	var que []TopicwiseQuestions
 
 	//Query to fetch the questions of that specific year and exam
-	var topicQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
-		"topics.topic, subtopics.subtopic, questions.answer, user_answers.answered, user_answers.correct, " +
-		"questions.option1, questions.option2, questions.option3, questions.option4, questions.explanation, " +
-		"questions.learning, questions.source FROM questions " +
-		"INNER JOIN topics ON questions.topic_id = topics.id " +
-		"INNER JOIN subtopics ON questions.subtopic1_id = subtopics.id " +
-		"INNER JOIN exams ON questions.exam_id = exams.id " +
-		"LEFT JOIN user_answers ON questions.id = user_answers.question_id " +
-		"AND user_answers.user_id = ? WHERE exam_id = ? and questions.topic_id = ? and " +
-		"questions.subtopic1_id = ? ORDER BY id")
+	var topicQuery = ("SELECT pre_questions.id, exams.exam, exams.type, pre_questions.year, pre_questions.question, " +
+		"topics.topic, subtopics.subtopic, pre_questions.answer, user_answers.answered, user_answers.correct, " +
+		"pre_questions.option1, pre_questions.option2, pre_questions.option3, pre_questions.option4, pre_questions.explanation, " +
+		"pre_questions.learning, pre_questions.source FROM pre_questions " +
+		"INNER JOIN topics ON pre_questions.topic_id = topics.id " +
+		"INNER JOIN subtopics ON pre_questions.subtopic1_id = subtopics.id " +
+		"INNER JOIN exams ON pre_questions.exam_id = exams.id " +
+		"LEFT JOIN user_answers ON pre_questions.id = user_answers.question_id " +
+		"AND user_answers.user_id = ? WHERE exam_id = ? and pre_questions.topic_id = ? and " +
+		"pre_questions.subtopic1_id = ? ORDER BY id")
 
-	DB.Raw(topicQuery, userId, 1, 1, 1).Find(&que)
+	DB.Raw(topicQuery, 1, 1, topicId, subtopicId).Find(&que)
 	DB.LogMode(true)
 	return que
 }
@@ -80,15 +80,15 @@ func GetBookmarkedQuestions(userId int64) []Questions {
 	var bookmarks []Questions
 
 	//Query to fetch the questions of that specific year and exam
-	var topicQuery = ("SELECT questions.id, exams.exam, exams.type, questions.year, questions.question, " +
-		"topics.topic, subtopics.subtopic, questions.answer, questions.option1, questions.option2, " +
-		"questions.option3, questions.option4, questions.explanation, " +
-		"questions.learning, questions.source FROM questions " +
-		"INNER JOIN topics ON questions.topic_id = topics.id " +
-		"INNER JOIN subtopics ON questions.subtopic1_id = subtopics.id " +
-		"INNER JOIN exams ON questions.exam_id = exams.id " +
-		"LEFT JOIN bookmarks ON questions.id = bookmarks.question_id " +
-		"AND bookmarks.user_id = ? WHERE exam_id = ? " +
+	var topicQuery = ("SELECT pre_questions.id, exams.exam, exams.type, pre_questions.year, pre_questions.question, " +
+		"topics.topic, subtopics.subtopic, pre_questions.answer, pre_questions.option1, pre_questions.option2, " +
+		"pre_questions.option3, pre_questions.option4, pre_questions.explanation, " +
+		"pre_questions.learning, pre_questions.source FROM pre_questions " +
+		"INNER JOIN topics ON pre_questions.topic_id = topics.id " +
+		"INNER JOIN subtopics ON pre_questions.subtopic1_id = subtopics.id " +
+		"INNER JOIN exams ON pre_questions.exam_id = exams.id " +
+		"LEFT JOIN bookmarks ON pre_questions.id = bookmarks.question_id " +
+		"WHERE bookmarks.user_id = ? AND exam_id = ? " +
 		"ORDER BY id")
 
 	DB.Raw(topicQuery, userId, 1).Find(&bookmarks)

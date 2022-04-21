@@ -46,6 +46,15 @@ func LoginUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	userId := models.FindUserId(*loginUser)
+
+	userDetails, _ := models.GetUserFromUserId(userId)
+	body, err := json.Marshal(userDetails)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+
 	expirationTime := time.Now().Add(time.Minute * 60)
 
 	claims := &models.Claims{
@@ -72,9 +81,9 @@ func LoginUser(w http.ResponseWriter, r *http.Request) {
 			Expires: expirationTime,
 		})
 
-	// w.Header().Set("Content-Type", "application/json")
-	// w.WriteHeader(http.StatusOK)
-	// w.Write(res)
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(body)
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {

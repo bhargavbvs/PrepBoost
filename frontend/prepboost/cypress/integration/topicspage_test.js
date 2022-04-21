@@ -10,7 +10,7 @@ describe("renders the home page", () => {
 
       it("routes to a correct pages", () => {
            cy.findAllByText("Miscellaneous").click();
-           cy.url().should("include", "topicquestions");
+           cy.url().should("include", "miscellaneousquestions");
          });
 
       it("routes to a correct pages", () => {
