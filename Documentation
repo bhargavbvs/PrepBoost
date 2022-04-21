@@ -1,0 +1,301 @@
+Backend Documentation
+
+# Index
+
+# API Documentation
+
+## Signup
+
+### Endpoint
+
+/users/signup 
+
+### Method
+
+POST
+
+### Fields
+
+| Key  | Description | Type | Required |
+| ------------- | ------------- | ----------- | ------------ |
+| username  | Username | String | Yes|
+| mobile  | Mobile number of the user | String | Yes |
+| email | Email of the user | String | No|
+| paid  | Is the user a paid/unpaid user i.e. subscribed. While signup default will be 0 | Int | Yes |
+| session_id | Session id auto-generated for every user | String | Yes|
+
+### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+We wanted to take minimal information from the users. However, we wanted to differentiate the users uniquely. So we kept mobile numbers as mandatory for signup. 
+
+
+## User Details
+
+### Endpoint
+
+/users/{id}
+
+### Method
+
+GET
+
+### OUTPUT
+
+Get the user details in the form of JSON. For example, the JSON format is given below.
+
+```javascript
+{
+    "ID": 2,
+    "Username": "Chaitanya Kumar",
+    "Mobile": "+3528906575",
+    "Email": "chaintanya@gmail.com",
+    "Paid": 0,
+    "Session_id": "ajddhyakljhsj",
+    "Created_at": "2022-02-04T19:33:20.8491701-05:00",
+    "Updated_at": "2022-02-04T19:33:20.8491701-05:00"
+}
+```
+
+### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+
+## Update User Details
+
+### Endpoint
+
+/users/{id}
+
+### Method
+
+POST
+
+### OUTPUT
+
+The user details will be successfully updated and the new user details JSON is given. For example the above user details are modified.
+
+```javascript
+{
+    "ID": 2,
+    "Username": "Chaitanya Kumar Reddy",
+    "Mobile": "+3529008785",
+    "Email": "chaintanya39@gmail.com",
+    "Paid": 0,
+    "Session_id": "sfsdfdajddhyakljhsj",
+    "Created_at": "2022-02-04T19:33:20.8491701-05:00",
+    "Updated_at": "2022-02-04T20:33:20.8491701-05:00"
+}
+```
+### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+## Delete User Details
+
+### Endpoint
+
+/users/{id}
+
+### Method
+
+DELETE
+
+### OUTPUT
+
+All the user details will be deleted from the database. 
+
+```javascript
+
+{
+    "success": true,
+    "deleted_id": 4
+}
+```
+
+### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+
+### Endpoint
+
+/questions/{year}
+
+### Method
+POST
+
+### Fields
+| Key  | Description | Type | Required |
+| ------------- | ------------- | ----------- | ------------ |
+| ID | unique identifier | uint | Yes |  
+| Exam| exam type | string | Yes | Yes |
+| Type| exam Level Prelims | string | Yes|
+| Year| year wise | uint | Yes |
+| Question | Question asked in the exam | string | Yes |
+| Answer | Solution like which option is correct | string | Yes |
+| Option1 | Description of Option 1 | string | Yes |
+| Option2 | Description of Option 2 | string | Yes |
+| Option3 | Description of Option 3 | string | Yes |
+| Option4 | Description of Option 4 | string | Yes |
+| Explanation | Elaborate on the solution giving key concepts | string | No |
+| Learning | Techniques to solve the question | string | No |
+| Source | From where the question is asked and solution is obtained from | string | No |
+
+### OUTPUT
+All  year wise questions structure from the database will be extracted based on Ids 
+Post the year wise questions in the form of JSON. For example, the JSON format is given below.
+
+```javascript
+
+{"ID": 3,
+        "Exam": "IAS",
+        "Type": "Prelims",
+        "Year": 2020,
+        "Question": "With reference to the history of India, consider the following pairs:\\nFamous Place : Present State\\n\\n1. Bhilsa --- Madhya Pradesh\\n\\n2. Dwarasamudra --- Maharashtra\\n\\n3. Girinagar --- Gujarat\\n\\n4. Sthaneshwara --- Uttar Pradesh\\n\\nWhich of the pairs given above are correctly matched?",
+        "Answer": "A",
+        "Option1": "1 and 3 only",
+        "Option2": "1 and 4 only",
+        "Option3": "2 and 3 only",
+        "Option4": "2 and 4 only",
+        "Explanation": "There was a question on Asiatic lion in 2019 prelims which are only present in Gir National Park in Gujarat. So even if you don't know any of these given places you must know statement 3 is correct if you have solved previous years questions. By this we can eliminate options B & D. It's 50-50 now, we must choose b/w statement 1 and 2. \\n\\nNow, if we don't know any of the remaining two places, let's see how to answer this. If you are from MP, GJ, RJ, MH etc (the central Indian states) or any of you who heard about the Bhil tribe could have guessed statement 1 might be correct and gone for option 1 which is the correct answer. \\n\\nThe reason is Bhil tribe is one of the largest tribes in India. They are also demanding a separate Bhil state called Bhil Pradesh which was also in news. They are mostly concentrated in the central Indian states. \\n\\nLet's see what actually is Bhilsa. It's a place in MP where there are Buddhist & Jain architectures. Further, Dwarasamudra is located in Karnataka & was the capital of the Hoysala rulers. \\n\\nSthaneshwara is in Harayana. It was the main seat of the Pushyabhuti dynasty. Famous king Harshavardhana (606-647CE) was from this dynasty. The capital of this dynasty was Sthaneshwara initially which was later on shifted to Kannauj. So option 1 is the correct answer.",
+        "Learning": "Solving previous years questions multiple times with in depth analysis is needed. You never know in what way they become useful.",
+        "Source": ""
+    },
+    {
+        "ID": 4,
+        "Exam": "IAS",
+        "Type": "Prelims",
+        "Year": 2020,
+        "Question": "In the context of recent advances in human reproductive technology, ‘Pronuclear Transfer” is used for",
+        "Answer": "D",
+        "Option1": "Fertilization of egg in vitro by the donor sperm",
+        "Option2": "Genetic modification of sperm producing cells",
+        "Option3": "Development of stem cells into functional embryos",
+        "Option4": "Prevention of mitochondrial diseases in offspring",
+        "Explanation": "Pronuclear transfer technique is used to prevent faulty mitochondria from being passed from a mother to her child. The 3-parent baby which you might have heard of is a result of this. The vast majority of this baby's DNA will come from the mother and father. A small bit of extra DNA will come from another woman (DNA from mitochondria). So option D is correct here. \\n\\nRead more at https://www.sciencenewsforstudents.org/article/how-make-three-parent-baby",
+        "Learning": "The 3 parent baby is often seen in the news but some of you might have missed the term pronuclear transfer there. So cover biotech carefully, given more importance in Prelims nowadays.",
+        "Source": ""
+    },
+
+### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+
+### Endpoint
+
+/topicwise/{topicId}/{subtopicId}
+
+### Method
+POST
+
+### Fields
+
+
+| Key  | Description | Type | Required |
+| ------------- | ------------- | ----------- | ------------ |
+|ID | unique identifier | uint | Yes |  
+| Exam| exam type | string | Yes | 
+| Type| exam Level Prelims | string | Yes|
+| Year| year wise | uint | Yes |
+| Question | Question asked in the exam | string | Yes |
+| Answer | Solution like which option is correct | string | Yes |
+| Option1 | Description of Option 1 | string | Yes |
+| Option2 | Description of Option 2 | string | Yes |
+| Option3 | Description of Option 3 | string | Yes |
+| Option4 | Description of Option 4 | string | Yes |
+| Explanation | Elaborate on the solution giving key concepts | string | No |
+| Learning | Techniques to solve the question | string | No |
+| Source | From where the question is asked and solution is obtained from | string | No |
+
+### OUTPUT
+All  topic wise questions from the database will be extracted based on topic Ids 
+Post the topic wise  questions in the form of JSON. For example, the JSON format is given below.
+
+```javascript
+
+
+
+
+
+ 
+  {
+        "ID": 221,
+        "Exam": "IAS",
+        "Type": "Prelims",
+        "Year": 2018,
+        "Question": "Increase in absolute and per capita real GNP do not connote a higher level of economic development, if",
+        "Answer": "C",
+        "Answered": "",
+        "Option1": "Industrial output fails to keep pace with agricultural output.",
+        "Option2": "Agricultural output fails to keep pace with industrial output.",
+        "Option3": "Poverty and unemployment increase.",
+        "Option4": "Imports grow faster than exports.",
+        "Explanation": "",
+        "Learning": "",
+        "Source": ""
+    }
+    
+    ### Response code 
+
+Status Codes : 200, 400, 501
+Example : 
+code : 200 OK
+
+
+Frontend documentation
+anudeepreddy36 edited this page on Mar 4 · 7 revisions
+ Pages 3
+Find a Page…
+Home
+Backend Documentation
+Frontend documentation
+Login button
+Home button
+Year wise button
+Images significance
+Topic Wise button
+Questions
+Different devices
+ Add a custom sidebar
+Clone this wiki locally
+https://github.com/bhargavbvs/PrepBoost.wiki.git
+The frontend currently implements the Node. JS and React framework.
+
+We have created the navigation bar with Home, Year-wise questions, Topic-wise questions currently.
+
+Login button
+By clicking on the Login button, login page will be opened and it will also have a button to redirect to signup page.
+
+Home button
+By clicking on the Home button, we go to the welcome page of PrepBoost.com.
+
+Year wise button
+By clicking on the year-wise button, different years from 2021 to 2011 in sorted order along with the respective images relevant to that specific year are displayed.
+
+Images significance
+The images we choose signify the most important question asked in that specific year of the exam. Further, it is chosen so that it motivates the students to learn more about it. On selecting a specific year, the users will be displayed all the questions data from that specific year. (yet to be implemented)
+
+Topic Wise button
+In the topic wise button, topic wise/subject wise questions are displayed. After analyzing the paper and speaking to some students who are preparing for the exam, we have categorized all the questions in the Prelims paper into 18 sub-categories like Economy, Polity, Geography, Ancient History, Modern History and more. Students can also focus on the specific topic/subject which they need to improve/focus upon. UI/UX design: We have selected the specific images that will be relevant for the specific subject so that the user can identify the subject/topic directly even without reading the text. This is done by keeping in mind the UI/UX design.
+
+Questions
+When the user clicks on the year or topic he wants to prepare, the questions related will be fetched from the backend and displayed here. Users can answer these questions. The answers will be stored in the session. Once he answers all the questions in the section, scores and results will be displayed.
+
+We created the user interface by using react-router-dom for the creation of buttons, navigation bar, cards. In the main.go we have created template App.js for creation of navigation bar, styling, coloring, resizing. In the component's template, we have defined buttons, cards, etc
+
+Different devices
+We designed a responsive website that automatically adjusts different screen sizes and viewports to make it look good on all devices (desktops, tablets, and phones).
