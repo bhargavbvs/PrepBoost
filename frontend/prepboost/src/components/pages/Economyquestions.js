@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
-export default function Economyquestions() {
+const Economyquestions =(props) => {
+
+	
+
 	const questions = [
 		{
 			questionText: ' What do you mean by the supply of goods?',
@@ -40,6 +43,8 @@ export default function Economyquestions() {
 		},
 	];
 
+	const data = props.data
+
 	const [currentQuestion, setCurrentQuestion] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
@@ -57,6 +62,7 @@ export default function Economyquestions() {
 		}
 	};
 	return (
+		
 		<div className='topicquestions'>
 			{showScore ? (
 				<div className='score-section'>
@@ -66,6 +72,7 @@ export default function Economyquestions() {
 				<>
 					<div className='question-section'>
 						<div className='question-count'>
+							{data}
 							<span>Question {currentQuestion + 1}</span>/{questions.length}
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText} </div>
@@ -82,3 +89,5 @@ export default function Economyquestions() {
 		</div>
 	);
 }
+
+export default Economyquestions;

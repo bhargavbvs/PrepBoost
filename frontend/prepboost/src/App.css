@@ -9,42 +9,58 @@
 .contact,
 .bookmarks {
   display: flex;
-  height: 90vh;
-  width: 180vh;
+  height: 99.8vh;
+  width: 184.4vh;
   align-items: center;
   justify-content: center;
   font-size: 3rem;
+  background-color: hwb(0 65% 35% / 0.008);
 }
 
 .login,
 .signup,
 .years,
 .topics{
-  width: 1800vh;
+  width: 3000vh;
+  height: 100vh;
+  background-color: #12b2d66f;
 }
+
 
 .topicquestions {
   background-color: #12b2d66f;
-  width: 450px;
-  min-height: 200px;
+  width: 1350px;
+  min-height: 800px;
   height: min-content;
   border-radius: 35px;
-  padding: 20px;
+  padding: 100px;
   box-shadow: 10px 10px 42px 0px rgba(0, 0, 0, 0.75);
   display: flex;
   justify-content: space-evenly;
   margin-left: auto;
   margin-right: auto;
+  background-repeat: no-repeat;
+  background-size: 1300px 1800px;
 }
 
 .score-section {
   display: flex;
   font-size: 24px;
   align-items: center;
+  height: 200vh;
+  width: 30vh;
+}
+
+.score {
+  display: flex;
+  font-size: 24px;
+  align-items: center;
+  height: 10vh;
+  width: 80vh;
 }
 
 .question-section {
-  width: 100%;
+  width: 80%;
   position: relative;
 }
 
@@ -66,15 +82,78 @@
   flex-direction: column;
   min-height: 100px;
   justify-content: space-between;
-  margin-left: auto;
+  margin-left: 0px;
   margin-right: auto;
 }
 
 
-.sign-up {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+form {
+    display: inline-block;
+    background: #f3f3f3;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    padding: 2rem;
+    margin: 2rem 0 1rem 0
+}
+
+form label {
+    float: left;
+    font-size: .9rem;
+    margin: 0;
+    padding: 0
+}
+
+.right-label {
+    float: right;
+    cursor: pointer
+}
+
+input {
+    width: 13rem;
+    padding: .3rem;
+    border-radius: 5px;
+    outline: none;
+    border: none
+}
+
+#sub_btn {
+    display: block;
+    width: 100%;
+    padding: .3rem;
+    border: none;
+    background: #222;
+    color: #fff;
+    border-radius: 3px;
+}
+
+#sub_btn:hover {
+    background: #333;
+    transition: all .5s
+}
+
+footer p {
+    margin: 0;
+    font-size: .9rem
+}
+
+/***    Register Page     ***/
+#checkbox {
+    width: 1rem
+}
+
+form span {
+    font-size: .8rem
+}
+
+#reset_pass_lbl {
+    float: left
+}
+
+/***    Home Page     ***/
+.home-page-title {
+    color: #222
+}
+
+h2 {
+  font-weight: 300
 }
