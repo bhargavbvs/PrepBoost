@@ -54,7 +54,7 @@ Features completed for updating Data base
 3. Updated code at backend to extract the data of all the questions.
 4. Initially we tried to update database directly at the database level but later, we tried to update it at backend level. Which demonstrates the levels of updation of code.
 ![Screenshot (36)]![image](https://user-images.githubusercontent.com/93815375/164362221-b4b96a59-83b8-4632-bee2-3c8d523efcfc.png)
-
+Link to script_for_db_update : https://github.com/bhargavbvs/PrepBoost/blob/main/script_for_db_update.py
 
 5. questions  topic wise for past 10 years
 ![Screenshot (34)]![image](https://user-images.githubusercontent.com/93815375/164361438-187ec519-f556-4aaa-b40b-bfc8c2783ea1.png)
