@@ -53,3 +53,10 @@ Features completed for updating Data base
 2. Updation of questions year wise for last 25 years.
 3. Updated code at backend to extract the data of all the questions.
 4. Initially we tried to update database directly at the database level but later, we tried to update it at backend level. Which demonstrates the levels of updation of code.
+
+5. questions  topic wise for past 10 years
+![Screenshot (34)]![image](https://user-images.githubusercontent.com/93815375/164361438-187ec519-f556-4aaa-b40b-bfc8c2783ea1.png)
+
+6. questions year wise for last 25 years
+![Screenshot (35)]![image](https://user-images.githubusercontent.com/93815375/164361886-29a521ca-2b95-4c6e-afe5-b4c7d1594208.png)
+
