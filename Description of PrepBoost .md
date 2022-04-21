@@ -21,6 +21,7 @@ Link to Cypress test video : https://github.com/bhargavbvs/PrepBoost/blob/main/c
 
 Link to Backend unit test video : 
 
+Link to functionality guide : https://github.com/bhargavbvs/PrepBoost/blob/main/FunctionalityGuide.md
 
 # Team Members :
 
