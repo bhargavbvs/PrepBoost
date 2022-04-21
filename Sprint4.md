@@ -90,13 +90,23 @@ Link to script_for_db_update : https://github.com/bhargavbvs/PrepBoost/blob/main
 12. Unit test cases fot the User signup
 <img width="1195" alt="Screen Shot 2022-04-20 at 11 50 17 PM" src="https://user-images.githubusercontent.com/17181838/164368443-1d4ec5b3-df9b-4ab4-8668-ff18d6fc536f.png">
 
+13. Updated the data in the RDS Database instance in the AWS Servers. Contains the data of the past 25 years. 
+<img width="1270" alt="Screen Shot 2022-04-21 at 12 15 02 AM" src="https://user-images.githubusercontent.com/17181838/164370877-50827f02-88e3-44f4-8d69-5b3c9256cddc.png">
+
+14. Fixed the ASCII conversion error while inserting the data into the MySQL database of RDS : UTF8 errors
+
+15. Wrote the python script for the data upload into the server database. 
+<img width="1123" alt="Screen Shot 2022-04-21 at 12 19 19 AM" src="https://user-images.githubusercontent.com/17181838/164371302-3fa780ac-4ee9-4561-9f4c-8f0f4bac91cd.png">
+
+16. Collected and modified the data of the past 25 years questions for the UPSC prelims questions. 
+<img width="1696" alt="Screen Shot 2022-04-21 at 12 20 49 AM" src="https://user-images.githubusercontent.com/17181838/164371493-a6233a09-37c3-478e-8d8d-31bc7477d1b6.png">
+
+17. Wrote the API for report question error
+18. Updated the leaderboard API 
+19. Fixed the bugs for the sql time error - Convert uint32 to int error
+20. Fixed the testing bugs for the unit test cases error
+21. Fixed the sql query errors in the topicwise, yearwise and bookmarked questions
 
 
 https://user-images.githubusercontent.com/17181838/164367047-d8b4ed6e-df44-4934-b6de-c924a9d1e252.mp4
-
-
-
-
-
-
 
