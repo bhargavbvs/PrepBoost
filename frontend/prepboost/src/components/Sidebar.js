@@ -28,6 +28,8 @@ import HomeIcon from "@material-ui/icons/Home";
 import DateRangeIcon from '@material-ui/icons/DateRange';
 import TopicIcon from '@material-ui/icons/LibraryBooks';
 import BookmarksIcon from '@material-ui/icons/Bookmarks';
+import LoginIcon from '@material-ui/icons/Face';
+import ContactPageIcon from '@material-ui/icons/ContactSupport';
 
 const useStyles = makeStyles((theme) => ({
   drawerPaper: { width: 'inherit' },
@@ -53,7 +55,7 @@ function App() {
           <Link to="/login" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
-                  <HomeIcon />
+                  <LoginIcon />
                 </ListItemIcon>
                 <ListItemText primary={"Login"} />
               </ListItem>
@@ -93,7 +95,7 @@ function App() {
             <Link to="/contact" className={classes.link}>
               <ListItem button>
                 <ListItemIcon>
-                  <BookmarksIcon />
+                  <ContactPageIcon />
                 </ListItemIcon>
                 <ListItemText primary={"Contact"} />
               </ListItem>

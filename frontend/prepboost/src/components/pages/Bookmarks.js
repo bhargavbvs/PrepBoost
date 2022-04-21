@@ -9,6 +9,7 @@ export default function TopicQuestions(props) {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [question, setQuestions] = useState([]);
+	const [isloaded, setLoaded] = useState(0);
 	const userid = localStorage.getItem('userid')
 
 	useEffect(() => {
@@ -19,6 +20,7 @@ export default function TopicQuestions(props) {
 		else
 		{
 			const loadquestions = async () => {
+				setLoaded(0)
 				let item = { userid }
 				console.warn("details", item)
 	
@@ -32,6 +34,7 @@ export default function TopicQuestions(props) {
 				result = await result.json()
 				console.warn("result", result)
 				setQuestions(result)
+				setLoaded(1)
 	
 			}
 			loadquestions();
@@ -60,50 +63,62 @@ export default function TopicQuestions(props) {
 			</div>
 		  );
 	}
-	else if(question.length === 0)
-	{
-		return (
-			<div>    
-			  <h1 className='home'>No bookmarks yet</h1>
-			</div>
-		  );
-	}
 	else
-  	{
-		return (
-			<div className='topicquestions'>
-				{
-					question[0] ? <>{showScore ? (
-						<div className='score-section'>
-							You scored {score} out of {question.length}
-						</div>
-					) : (
-						<>
+	{
+		console.log("isloaded",isloaded)
+		while(isloaded === 0)
+		{
+			return (
+				<div>    
+				<h1 className='home'>Loading Questions....</h1>
+				</div>
+				
+			);
+			
+		}
+		if(isloaded === 1)
+		{
+			return (
+				
+						question[0] ? <>{showScore ? (
 							
-							<div className='question-section'>
-								<div className='question-count'>
-									<span>Question {currentQuestion + 1}</span>/{question.length}
-									
-								</div>
-								<div className='question-text'>{question[currentQuestion].Question} </div>
-	
-								<br />
-								<div className='answer-section'>
-									<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"A")}>{question[currentQuestion].Option1}</button>
-									<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"B")}>{question[currentQuestion].Option2}</button>
-									<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"C")}>{question[currentQuestion].Option3}</button>
-									<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"D")}>{question[currentQuestion].Option4}</button>
-								</div>
-								
-								<div className='score'>
-									You scored {score} out of {question.length}
-								</div>
+							<div className='score-section'>
+								You scored {score} out of {question.length}
 							</div>
-						</>
-					)}
-					</> : "Loading...."
-				}
-			</div>
-		);
+						) : (
+							<>
+							<div className='topicquestions'>
+							{
+								
+								<div className='question-section'>
+									<div className='question-count'>
+										<span>Question {currentQuestion + 1}</span>/{question.length}
+										
+									</div>
+									<div className='question-text'>{question[currentQuestion].Question} </div>
+		
+									<br />
+									<div className='answer-section'>
+										<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"A")}>{question[currentQuestion].Option1}</button>
+										<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"B")}>{question[currentQuestion].Option2}</button>
+										<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"C")}>{question[currentQuestion].Option3}</button>
+										<button onClick={() => handleAnswerOptionClick(question[currentQuestion].Answer,"D")}>{question[currentQuestion].Option4}</button>
+									</div>
+									
+									<div className='score'>
+										You scored {score} out of {question.length}
+									</div>
+								</div>
+							}
+							</div>
+							</>
+						)}
+						</> : 
+						<div>    
+				<h1 className='nobookmarks'>You have no bookmarks yet</h1>
+				</div>
+					
+			);
+		}
 	}
 }
