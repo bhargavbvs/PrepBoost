@@ -20,3 +20,7 @@ Features completed in Sprint4 for FRONTEND:
 5. Updated the stylings like background colours,paddings,font sizes,alignment of the Prepboost.
 6. Performed end to end Cypress testing starting from home page.
 
+Features completed for updating Data base
+1. updation of questions  topic wise for past 10 years.
+2. updation of questions year wise for last 25 years.
+3. Updated code at backend to extract the data of all the questions.
